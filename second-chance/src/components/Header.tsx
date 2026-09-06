@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ActiveScreen } from '../types';
 import { ArrowRight, User, Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface HeaderProps {
   activeScreen: ActiveScreen;
@@ -31,10 +32,11 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <div className="flex items-center min-w-0">
-          <button
+          <motion.button
             onClick={() => handleNavClick('about')}
             className="flex items-center gap-2 sm:gap-3 group text-left cursor-pointer min-w-0"
             id="brand-home-btn"
+            whileTap={{ scale: 0.97 }}
           >
             <img 
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkE2CBWerlIjG5Q5ilsnekCfFMde6WM1hw4ZRCIWFxA&s=10" 
@@ -49,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
             <span className="hidden 2xl:inline-block bg-[#ffe600] text-[#111111] font-mono text-[11px] uppercase px-2 py-0.5 border-[2px] border-[#111111] font-extrabold -rotate-2 select-none">
               TYCIA FOUNDATION
             </span>
-          </button>
+          </motion.button>
         </div>
 
         {/* Desktop Navigation */}
@@ -60,18 +62,21 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
           {navItems.map((item) => {
             const isActive = activeScreen === item.id;
             return (
-              <button
+              <motion.button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
+                className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider cursor-pointer relative ${
                   isActive
                     ? 'bg-[#111111] text-white font-extrabold shadow-[1px_1px_0px_#111111]'
                     : 'text-[#4b4731] hover:bg-[#ffe600] hover:text-[#111111] font-bold'
                 }`}
                 id={`nav-link-${item.id}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
                 {item.label}
-              </button>
+              </motion.button>
             );
           })}
         </nav>
@@ -84,48 +89,98 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <button
+          <motion.button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-1.5 border-[2px] border-[#111111] bg-[#f6f3f2] shadow-[2px_2px_0px_#111111] cursor-pointer"
             aria-label="Toggle menu"
             id="mobile-menu-toggle-btn"
+            whileTap={{ scale: 0.9, rotate: 10 }}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            <AnimatePresence mode="wait" initial={false}>
+              {mobileMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="w-5 h-5" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="w-5 h-5" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#fcf9f8] border-b-[3px] border-[#111111] p-4 shadow-[4px_4px_0px_#111111] space-y-3">
-          <div className="grid grid-cols-2 gap-2">
-            {navItems.map((item) => {
-              const isActive = activeScreen === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`p-2.5 font-mono text-xs uppercase tracking-wider font-bold border-[2px] border-[#111111] text-left ${
-                    isActive
-                      ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
-                      : 'bg-white text-[#111111] hover:bg-[#ffe600]'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </div>
+      {/* Mobile Menu Drawer — animated slide-down with staggered items */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="lg:hidden bg-[#fcf9f8] border-b-[3px] border-[#111111] p-4 shadow-[4px_4px_0px_#111111] space-y-3"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{ overflow: 'hidden' }}
+          >
+            <motion.div
+              className="grid grid-cols-2 gap-2"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
+              }}
+            >
+              {navItems.map((item) => {
+                const isActive = activeScreen === item.id;
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    className={`p-2.5 font-mono text-xs uppercase tracking-wider font-bold border-[2px] border-[#111111] text-left ${
+                      isActive
+                        ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
+                        : 'bg-white text-[#111111] hover:bg-[#ffe600]'
+                    }`}
+                    variants={{
+                      hidden: { opacity: 0, y: -10, scale: 0.95 },
+                      visible: { opacity: 1, y: 0, scale: 1 },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
 
-          {/* Mobile Theme Preference Selector */}
-          <div className="pt-2 border-t border-black/15 flex items-center justify-between">
-            <span className="font-mono text-xs uppercase font-extrabold text-[#4b4731]">
-              DISPLAY THEME:
-            </span>
-            <ThemeToggle />
-          </div>
-        </div>
-      )}
+            {/* Mobile Theme Preference Selector */}
+            <motion.div
+              className="pt-2 border-t border-black/15 flex items-center justify-between"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="font-mono text-xs uppercase font-extrabold text-[#4b4731]">
+                DISPLAY THEME:
+              </span>
+              <ThemeToggle />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

@@ -10,6 +10,10 @@ import {
   TrendingDown,
   Layers,
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { AnimatedSection } from './animations/AnimatedSection';
+import { StaggerContainer, StaggerItem } from './animations/StaggerContainer';
+import { AnimatedCounter } from './animations/AnimatedCounter';
 
 interface ImpactSectionProps {
   onNavigate: (screen: ActiveScreen) => void;
@@ -52,6 +56,94 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
     },
   ];
 
+  // Impact cards data
+  const impactCards = [
+    {
+      tag: 'RECIDIVISM RATE',
+      tagBg: 'bg-[#ff5722]',
+      tagText: 'text-white',
+      stat: '-3%',
+      statColor: 'text-[#b02f00]',
+      counterTarget: 3,
+      counterPrefix: '-',
+      counterSuffix: '%',
+      title: 'Drop in Repeat Offenses',
+      description: 'Lowered the rate of recidivism by 3% in past 18 months, registering direct impact across the high-density repeaters ward.',
+      bg: 'bg-white text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#dec800]',
+    },
+    {
+      tag: 'REALISATION & ACTUALISATION',
+      tagBg: 'bg-[#111111]',
+      tagText: 'text-[#ffe600]',
+      stat: '1,800+',
+      statColor: 'text-[#111111]',
+      counterTarget: 1800,
+      counterPrefix: '',
+      counterSuffix: '+',
+      title: 'Inmates Engaged',
+      description: 'Taken through a structured life skills journey of recognizing the long-term impact of their actions on themselves and society.',
+      bg: 'bg-[#ffe600] text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#ffffff]',
+    },
+    {
+      tag: 'FORMAL EDUCATION',
+      tagBg: 'bg-[#0053db]',
+      tagText: 'text-white',
+      stat: '250+',
+      statColor: 'text-[#0053db]',
+      counterTarget: 250,
+      counterPrefix: '',
+      counterSuffix: '+',
+      title: 'Board & Degree Aspirants',
+      description: '150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and appeared for IGNOU degree examinations.',
+      bg: 'bg-white text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#ff5722]',
+    },
+    {
+      tag: 'INTERNAL VOCATION',
+      tagBg: 'bg-[#111111]',
+      tagText: 'text-white',
+      stat: '60+',
+      statColor: 'text-[#111111]',
+      counterTarget: 60,
+      counterPrefix: '',
+      counterSuffix: '+',
+      title: 'Employed Inside Prison',
+      description: 'Inmates formally employed part-time within the prison premises following graduation from our functional skill bootcamps.',
+      bg: 'bg-white text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#ffe600]',
+    },
+    {
+      tag: 'PROGRAM SUSTAINABILITY',
+      tagBg: 'bg-[#0053db]',
+      tagText: 'text-white',
+      stat: '20+',
+      statColor: 'text-[#0053db]',
+      counterTarget: 20,
+      counterPrefix: '',
+      counterSuffix: '+',
+      title: 'Trained Peer Leaders',
+      description: 'Self-sustaining model: created a core cadre of inmate leaders capable of running cohorts and life-skills workshops independently.',
+      bg: 'bg-[#dbe1ff] text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#ffffff]',
+    },
+    {
+      tag: 'INTENSIVE FIELDWORK',
+      tagBg: 'bg-[#111111]',
+      tagText: 'text-[#ff5722]',
+      stat: '2,500+',
+      statColor: 'text-[#111111]',
+      counterTarget: 2500,
+      counterPrefix: '',
+      counterSuffix: '+',
+      title: 'Hours Spent Inside',
+      description: 'Directly delivered classes and workshops by fellows, driving a 60% documented growth in language and arithmetic proficiency.',
+      bg: 'bg-[#ff5722] text-[#111111]',
+      shadow: 'shadow-[6px_6px_0px_#ffe600]',
+    },
+  ];
+
   return (
     <section
       className="w-full bg-[#111111] text-white py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
@@ -59,201 +151,159 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
     >
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/20 pb-4">
-          <div>
-            <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
-              MEASURABLE TRANSFORMATION
-            </span>
-            <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-white tracking-tight font-bold">
-              PROVEN IMPACT RECORD
-            </h2>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActiveTab('metrics')}
-              className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
-                activeTab === 'metrics'
-                  ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
-                  : 'bg-transparent text-white border-white/40 hover:border-white'
-              }`}
-            >
-              Impact Cards
-            </button>
-            <button
-              onClick={() => setActiveTab('timeline')}
-              className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
-                activeTab === 'timeline'
-                  ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
-                  : 'bg-transparent text-white border-white/40 hover:border-white'
-              }`}
-            >
-              Field Timeline
-            </button>
-          </div>
-        </div>
-
-        {activeTab === 'metrics' ? (
-          /* The 6 Brutalist Impact Cards Grid */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* 1. Recidivism Rate Drop */}
-            <div className="bg-white text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#dec800] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#ff5722] text-white font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  RECIDIVISM RATE
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#b02f00] tracking-tighter">
-                  -3%
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Drop in Repeat Offenses
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#4b4731] leading-relaxed">
-                Lowered the rate of recidivism by 3% in past 18 months, registering direct impact
-                across the high-density repeaters ward.
-              </p>
+        <AnimatedSection direction="up" duration={0.6}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/20 pb-4">
+            <div>
+              <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+                MEASURABLE TRANSFORMATION
+              </span>
+              <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-white tracking-tight font-bold">
+                PROVEN IMPACT RECORD
+              </h2>
             </div>
-
-            {/* 2. Inmates Engaged */}
-            <div className="bg-[#ffe600] text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#ffffff] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#111111] text-[#ffe600] font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  REALISATION & ACTUALISATION
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#111111] tracking-tighter">
-                  1,800+
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Inmates Engaged
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#111111] leading-relaxed font-medium">
-                Taken through a structured life skills journey of recognizing the long-term impact of
-                their actions on themselves and society.
-              </p>
-            </div>
-
-            {/* 3. Formal Education */}
-            <div className="bg-white text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#ff5722] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#0053db] text-white font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  FORMAL EDUCATION
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#0053db] tracking-tighter">
-                  250+
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Board & Degree Aspirants
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#4b4731] leading-relaxed">
-                150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and
-                appeared for IGNOU degree examinations.
-              </p>
-            </div>
-
-            {/* 4. Internal Vocation */}
-            <div className="bg-white text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#ffe600] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#111111] text-white font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  INTERNAL VOCATION
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#111111] tracking-tighter">
-                  60+
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Employed Inside Prison
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#4b4731] leading-relaxed">
-                Inmates formally employed part-time within the prison premises following graduation
-                from our functional skill bootcamps.
-              </p>
-            </div>
-
-            {/* 5. Program Sustainability */}
-            <div className="bg-[#dbe1ff] text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#ffffff] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#0053db] text-white font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  PROGRAM SUSTAINABILITY
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#0053db] tracking-tighter">
-                  20+
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Trained Peer Leaders
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#1c1b1b] leading-relaxed">
-                Self-sustaining model: created a core cadre of inmate leaders capable of running
-                cohorts and life-skills workshops independently.
-              </p>
-            </div>
-
-            {/* 6. Intensive Fieldwork */}
-            <div className="bg-[#ff5722] text-[#111111] border-[2.5px] border-white p-6 shadow-[6px_6px_0px_#ffe600] flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#111111] text-[#ff5722] font-mono text-xs uppercase px-2 py-0.5 font-extrabold">
-                  INTENSIVE FIELDWORK
-                </span>
-                <div className="font-['Space_Grotesk'] text-6xl font-extrabold text-[#111111] tracking-tighter">
-                  2,500+
-                </div>
-                <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111]">
-                  Hours Spent Inside
-                </h3>
-              </div>
-              <p className="font-['Inter'] text-sm sm:text-base text-[#111111] leading-relaxed font-semibold">
-                Directly delivered classes and workshops by fellows, driving a 60% documented
-                growth in language and arithmetic proficiency.
-              </p>
-            </div>
-          </div>
-        ) : (
-          /* Field Timeline View */
-          <div className="space-y-4 max-w-4xl mx-auto">
-            {milestones.map((m, idx) => (
-              <div
-                key={idx}
-                className="p-5 bg-white text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#ffe600] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+            <div className="flex items-center gap-2">
+              <motion.button
+                onClick={() => setActiveTab('metrics')}
+                className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
+                  activeTab === 'metrics'
+                    ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
+                    : 'bg-transparent text-white border-white/40 hover:border-white'
+                }`}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <div className="space-y-1">
-                  <span className="font-mono text-xs font-bold uppercase bg-[#ff5722] text-white px-2 py-0.5">
-                    {m.quarter}
-                  </span>
-                  <h4 className="font-['Space_Grotesk'] text-xl font-bold uppercase text-[#111111] mt-1">
-                    {m.title}
-                  </h4>
-                  <p className="font-['Inter'] text-sm text-[#4b4731] leading-relaxed">
-                    {m.description}
-                  </p>
-                </div>
-                <div className="shrink-0 flex items-center gap-2 font-mono text-xs font-bold text-[#0053db] uppercase">
-                  <CheckCircle className="w-4 h-4 text-[#0053db]" /> Verified Audit
-                </div>
-              </div>
-            ))}
+                Impact Cards
+              </motion.button>
+              <motion.button
+                onClick={() => setActiveTab('timeline')}
+                className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
+                  activeTab === 'timeline'
+                    ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
+                    : 'bg-transparent text-white border-white/40 hover:border-white'
+                }`}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Field Timeline
+              </motion.button>
+            </div>
           </div>
-        )}
+        </AnimatedSection>
+
+        <AnimatePresence mode="wait">
+          {activeTab === 'metrics' ? (
+            <motion.div
+              key="metrics"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              {/* Impact Cards Grid — staggered */}
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
+                {impactCards.map((card, idx) => (
+                  <StaggerItem key={idx}>
+                    <motion.div
+                      className={`${card.bg} border-[2.5px] border-white p-6 ${card.shadow} flex flex-col justify-between space-y-4 h-full`}
+                      whileHover={{
+                        translateY: -4,
+                        transition: { type: 'spring', stiffness: 300, damping: 20 },
+                      }}
+                    >
+                      <div className="space-y-2">
+                        <span className={`${card.tagBg} ${card.tagText} font-mono text-xs uppercase px-2 py-0.5 font-extrabold`}>
+                          {card.tag}
+                        </span>
+                        <div className={`font-['Space_Grotesk'] text-6xl font-extrabold ${card.statColor} tracking-tighter`}>
+                          <AnimatedCounter
+                            target={card.counterTarget}
+                            prefix={card.counterPrefix}
+                            suffix={card.counterSuffix}
+                            duration={2}
+                          />
+                        </div>
+                        <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold">
+                          {card.title}
+                        </h3>
+                      </div>
+                      <p className="font-['Inter'] text-sm sm:text-base leading-relaxed">
+                        {card.description}
+                      </p>
+                    </motion.div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="timeline"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              {/* Field Timeline View — sequential reveal */}
+              <StaggerContainer className="space-y-4 max-w-4xl mx-auto" staggerDelay={0.15}>
+                {milestones.map((m, idx) => (
+                  <StaggerItem key={idx} direction="left">
+                    <motion.div
+                      className="p-5 bg-white text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#ffe600] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                      whileHover={{
+                        translateX: 4,
+                        boxShadow: '6px 6px 0px #ffe600',
+                        transition: { type: 'spring', stiffness: 300 },
+                      }}
+                    >
+                      <div className="space-y-1">
+                        <span className="font-mono text-xs font-bold uppercase bg-[#ff5722] text-white px-2 py-0.5">
+                          {m.quarter}
+                        </span>
+                        <h4 className="font-['Space_Grotesk'] text-xl font-bold uppercase text-[#111111] mt-1">
+                          {m.title}
+                        </h4>
+                        <p className="font-['Inter'] text-sm text-[#4b4731] leading-relaxed">
+                          {m.description}
+                        </p>
+                      </div>
+                      <div className="shrink-0 flex items-center gap-2 font-mono text-xs font-bold text-[#0053db] uppercase">
+                        <CheckCircle className="w-4 h-4 text-[#0053db]" /> Verified Audit
+                      </div>
+                    </motion.div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* CTA Bar */}
-        <div className="p-6 bg-[#ffe600] text-[#111111] border-[3px] border-white shadow-[6px_6px_0px_#ffffff] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h4 className="font-['Space_Grotesk'] text-2xl uppercase font-extrabold">
-              READY TO ACCELERATE SYSTEM REFORM?
-            </h4>
-            <p className="font-['Inter'] text-sm font-medium">
-              Join the next fellowship cohort or collaborate as an institutional donor.
-            </p>
-          </div>
-          <button
-            onClick={() => onNavigate('fellowship')}
-            className="bg-[#111111] text-white py-3 px-6 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] hover:bg-[#ff5722] hover:text-[#111111] transition-colors flex items-center gap-2 shrink-0 cursor-pointer shadow-[3px_3px_0px_#111111]"
+        <AnimatedSection direction="up" delay={0.2} duration={0.6}>
+          <motion.div
+            className="p-6 bg-[#ffe600] text-[#111111] border-[3px] border-white shadow-[6px_6px_0px_#ffffff] flex flex-col sm:flex-row items-center justify-between gap-4"
+            whileHover={{
+              boxShadow: '8px 8px 0px #ffffff',
+              transition: { type: 'spring', stiffness: 200 },
+            }}
           >
-            <span>Apply for Next Cohort</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+            <div className="space-y-1">
+              <h4 className="font-['Space_Grotesk'] text-2xl uppercase font-extrabold">
+                READY TO ACCELERATE SYSTEM REFORM?
+              </h4>
+              <p className="font-['Inter'] text-sm font-medium">
+                Join the next fellowship cohort or collaborate as an institutional donor.
+              </p>
+            </div>
+            <motion.button
+              onClick={() => onNavigate('fellowship')}
+              className="bg-[#111111] text-white py-3 px-6 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] hover:bg-[#ff5722] hover:text-[#111111] transition-colors flex items-center gap-2 shrink-0 cursor-pointer shadow-[3px_3px_0px_#111111]"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <span>Apply for Next Cohort</span>
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );

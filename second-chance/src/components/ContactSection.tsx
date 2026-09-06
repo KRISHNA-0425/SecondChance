@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Building, Clock } from 'lucide-react';
+import { motion } from 'motion/react';
+import { AnimatedSection } from './animations/AnimatedSection';
+import { StaggerContainer, StaggerItem } from './animations/StaggerContainer';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,24 +26,29 @@ export const ContactSection: React.FC = () => {
     <section className="w-full bg-[#f6f3f2] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="contact">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
-          <div>
-            <span className="bg-[#111111] text-[#ffe600] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
-              DISPATCH & FIELD DESK
-            </span>
-            <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
-              CONTACT & COORDINATES
-            </h2>
+        <AnimatedSection direction="up" duration={0.6}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
+            <div>
+              <span className="bg-[#111111] text-[#ffe600] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+                DISPATCH & FIELD DESK
+              </span>
+              <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
+                CONTACT & COORDINATES
+              </h2>
+            </div>
+            <div className="font-mono text-xs text-[#4b4731] font-bold uppercase">
+              OPERATIONAL HEADQUARTERS // NEW DELHI
+            </div>
           </div>
-          <div className="font-mono text-xs text-[#4b4731] font-bold uppercase">
-            OPERATIONAL HEADQUARTERS // NEW DELHI
-          </div>
-        </div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Coordinates Information Column */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="bg-white border-[2.5px] border-[#111111] p-6 shadow-[5px_5px_0px_#111111] space-y-4">
+          <AnimatedSection className="lg:col-span-5 space-y-4" direction="left" delay={0.1} duration={0.7}>
+            <motion.div
+              className="bg-white border-[2.5px] border-[#111111] p-6 shadow-[5px_5px_0px_#111111] space-y-4"
+              whileHover={{ boxShadow: '7px 7px 0px #111111', transition: { type: 'spring', stiffness: 200 } }}
+            >
               <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111] border-b-[2px] border-[#111111] pb-2">
                 OFFICIAL DESK COORDINATES
               </h3>
@@ -103,9 +111,12 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 bg-[#ffe600] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111]">
+            <motion.div
+              className="p-4 bg-[#ffe600] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111]"
+              whileHover={{ translateY: -2, boxShadow: '5px 5px 0px #111111' }}
+            >
               <div className="font-mono text-xs uppercase font-extrabold text-[#111111]">
                 SECURITY CLEARANCE NOTICE:
               </div>
@@ -113,11 +124,12 @@ export const ContactSection: React.FC = () => {
                 All external academic researchers, NGO visitors, and media entities must hold prior
                 written authorization from the Director General (Prisons), Delhi before requesting on-site gate access.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatedSection>
 
           {/* Interactive Dispatch Form Column */}
-          <div className="lg:col-span-7 bg-white border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111]">
+          <AnimatedSection className="lg:col-span-7" direction="right" delay={0.2} duration={0.7}>
+          <div className="bg-white border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111]">
             <h3 className="font-['Space_Grotesk'] text-2xl uppercase font-bold text-[#111111] border-b-[2px] border-[#111111] pb-3 mb-6">
               TRANSMIT OFFICIAL INQUIRY
             </h3>
@@ -215,6 +227,7 @@ export const ContactSection: React.FC = () => {
               </div>
             )}
           </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

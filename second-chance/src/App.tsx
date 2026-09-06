@@ -12,6 +12,8 @@ import { FellowshipSection } from './components/FellowshipSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { EntryAnimation } from './components/EntryAnimation';
+import { ScrollProgress } from './components/animations/ScrollProgress';
+import { motion, AnimatePresence } from 'motion/react';
 import { Eye, LayoutGrid } from 'lucide-react';
 
 export default function App() {
@@ -102,6 +104,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fcf9f8] text-[#1c1b1b] selection:bg-[#ffe600] selection:text-[#111111] font-['Inter']">
+      {/* Global Scroll Progress Bar */}
+      <ScrollProgress />
+
       {/* Entry Splash Loading Animation */}
       {showSplash && <EntryAnimation onComplete={handleSplashComplete} />}
 
@@ -171,7 +176,7 @@ export default function App() {
             </div>
           </>
         ) : (
-          /* Focused Single Screen View */
+          /* Focused Single Screen View with AnimatePresence Transitions */
           <div className="w-full">
             <div className="bg-[#111111] text-[#ffe600] py-2 px-4 border-b border-black">
               <div className="max-w-7xl mx-auto flex items-center justify-between font-mono text-xs uppercase font-bold">
@@ -185,28 +190,38 @@ export default function App() {
               </div>
             </div>
 
-            {activeScreen === 'about' && (
-              <>
-                <HeroSection onNavigate={handleNavigate} />
-                <GlobalEvidenceSection />
-              </>
-            )}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeScreen}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              >
+                {activeScreen === 'about' && (
+                  <>
+                    <HeroSection onNavigate={handleNavigate} />
+                    <GlobalEvidenceSection />
+                  </>
+                )}
 
-            {activeScreen === 'key-findings' && <FindingsSection />}
+                {activeScreen === 'key-findings' && <FindingsSection />}
 
-            {activeScreen === 'projects' && (
-              <ProjectsSection onNavigate={handleNavigate} />
-            )}
+                {activeScreen === 'projects' && (
+                  <ProjectsSection onNavigate={handleNavigate} />
+                )}
 
-            {activeScreen === 'impact' && (
-              <ImpactSection onNavigate={handleNavigate} />
-            )}
+                {activeScreen === 'impact' && (
+                  <ImpactSection onNavigate={handleNavigate} />
+                )}
 
-            {activeScreen === 'stories' && <StoriesSection />}
+                {activeScreen === 'stories' && <StoriesSection />}
 
-            {activeScreen === 'fellowship' && <FellowshipSection />}
+                {activeScreen === 'fellowship' && <FellowshipSection />}
 
-            {activeScreen === 'contact' && <ContactSection />}
+                {activeScreen === 'contact' && <ContactSection />}
+              </motion.div>
+            </AnimatePresence>
           </div>
         )}
       </main>

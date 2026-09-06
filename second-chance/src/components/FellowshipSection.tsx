@@ -11,6 +11,9 @@ import {
   Download,
   AlertCircle,
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { AnimatedSection } from './animations/AnimatedSection';
+import { StaggerContainer, StaggerItem } from './animations/StaggerContainer';
 
 export const FellowshipSection: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -77,21 +80,28 @@ export const FellowshipSection: React.FC = () => {
     <section className="w-full bg-[#fcf9f8] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="fellowship">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
-          <div>
-            <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2 border border-[#111111]">
-              12-MONTH LEADERSHIP FELLOWSHIP
-            </span>
-            <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
-              SECOND CHANCE FELLOWSHIP
-            </h2>
+        <AnimatedSection direction="up" duration={0.6}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
+            <div>
+              <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2 border border-[#111111]">
+                12-MONTH LEADERSHIP FELLOWSHIP
+              </span>
+              <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
+                SECOND CHANCE FELLOWSHIP
+              </h2>
+            </div>
+            <motion.div
+              className="font-mono text-xs text-[#b02f00] font-bold uppercase bg-[#ffdbd1] px-3 py-1.5 border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
+              animate={{ opacity: [1, 0.6, 1] }}
+              transition={{ repeat: Infinity, duration: 2.5 }}
+            >
+              COHORT 2025-2026 // ADMISSIONS OPEN
+            </motion.div>
           </div>
-          <div className="font-mono text-xs text-[#b02f00] font-bold uppercase bg-[#ffdbd1] px-3 py-1.5 border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]">
-            COHORT 2025-2026 // ADMISSIONS OPEN
-          </div>
-        </div>
+        </AnimatedSection>
 
         {/* Overview Banner */}
+        <AnimatedSection direction="up" delay={0.15} duration={0.7}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
           <div className="lg:col-span-8 space-y-4">
             <h3 className="font-['Space_Grotesk'] text-2xl sm:text-3xl uppercase text-[#111111] font-bold">
@@ -154,42 +164,52 @@ export const FellowshipSection: React.FC = () => {
             </ul>
           </div>
         </div>
+        </AnimatedSection>
 
         {/* 12-Month Program Architecture Roadmap */}
         <div className="space-y-4">
-          <div className="font-mono text-xs uppercase font-extrabold text-[#111111] tracking-wider">
-            THE 12-MONTH FELLOWSHIP JOURNEY:
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <AnimatedSection direction="up" duration={0.5}>
+            <div className="font-mono text-xs uppercase font-extrabold text-[#111111] tracking-wider">
+              THE 12-MONTH FELLOWSHIP JOURNEY:
+            </div>
+          </AnimatedSection>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.15}>
             {roadmapPhases.map((phase, idx) => (
-              <div
-                key={idx}
-                className="bg-white border-[2.5px] border-[#111111] p-5 shadow-[4px_4px_0px_#111111] flex flex-col justify-between space-y-3"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span
-                      className={`${phase.badgeBg} text-[#111111] font-mono text-xs uppercase font-extrabold px-2 py-0.5 border border-[#111111]`}
-                    >
-                      {phase.phase}
-                    </span>
-                    <span className="font-mono text-[11px] font-bold text-[#4b4731]">
-                      {phase.duration}
-                    </span>
+              <StaggerItem key={idx}>
+                <motion.div
+                  className="bg-white border-[2.5px] border-[#111111] p-5 shadow-[4px_4px_0px_#111111] flex flex-col justify-between space-y-3 h-full"
+                  whileHover={{
+                    translateY: -4,
+                    boxShadow: '6px 6px 0px #111111',
+                    transition: { type: 'spring', stiffness: 300, damping: 20 },
+                  }}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span
+                        className={`${phase.badgeBg} text-[#111111] font-mono text-xs uppercase font-extrabold px-2 py-0.5 border border-[#111111]`}
+                      >
+                        {phase.phase}
+                      </span>
+                      <span className="font-mono text-[11px] font-bold text-[#4b4731]">
+                        {phase.duration}
+                      </span>
+                    </div>
+                    <h4 className="font-['Space_Grotesk'] text-lg font-bold uppercase text-[#111111] mb-2 leading-tight">
+                      {phase.title}
+                    </h4>
+                    <p className="font-['Inter'] text-xs sm:text-sm text-[#4b4731] leading-relaxed">
+                      {phase.description}
+                    </p>
                   </div>
-                  <h4 className="font-['Space_Grotesk'] text-lg font-bold uppercase text-[#111111] mb-2 leading-tight">
-                    {phase.title}
-                  </h4>
-                  <p className="font-['Inter'] text-xs sm:text-sm text-[#4b4731] leading-relaxed">
-                    {phase.description}
-                  </p>
-                </div>
-              </div>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
 
         {/* Interactive Application Portal */}
+        <AnimatedSection direction="up" delay={0.2} duration={0.7}>
         <div className="bg-[#f6f3f2] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] max-w-4xl mx-auto">
           <div className="border-b-[2.5px] border-[#111111] pb-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
@@ -372,6 +392,7 @@ export const FellowshipSection: React.FC = () => {
             </div>
           )}
         </div>
+        </AnimatedSection>
       </div>
     </section>
   );
