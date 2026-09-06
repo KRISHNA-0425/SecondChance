@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Inter', sans-serif;
+    color: #1c1b1b;
+    background-color: #fcf9f8;
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-headline {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Neo-Brutalist Hard Shadows */
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px #111111;
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.brutal-shadow-md {
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-shadow-xl {
+  box-shadow: 8px 8px 0px #111111;
+}
+
+.brutal-shadow-yellow {
+  box-shadow: 5px 5px 0px #ffe600;
+}
+
+.brutal-shadow-coral {
+  box-shadow: 5px 5px 0px #ff5722;
+}
+
+.brutal-shadow-white {
+  box-shadow: 5px 5px 0px #ffffff;
+}
+
+.brutal-border {
+  border: 2.5px solid #111111;
+}
+
+.brutal-border-thick {
+  border: 3px solid #111111;
+}
+
+.brutal-btn {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brutal-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #111111;
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #111111;
+}
+

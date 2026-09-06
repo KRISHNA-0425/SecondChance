@@ -1,0 +1,6 @@
+{
+  "name": "Project Second Chance",
+  "description": "Criminal justice reform, rehabilitation and reintegration platform by TYCIA Foundation inside Delhi Prisons Tihar Jail No. 5.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

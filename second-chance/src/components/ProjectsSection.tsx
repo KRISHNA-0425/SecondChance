@@ -1,0 +1,210 @@
+import React, { useState } from 'react';
+import { PROJECTS_DATA, PEER_DIALOGUE_IMAGE_URL } from '../data/mockData';
+import { ProjectItem, ActiveScreen } from '../types';
+import { ProjectDossierModal } from './ProjectDossierModal';
+import {
+  GraduationCap,
+  PhoneCall,
+  Library,
+  LockKeyholeOpen,
+  Users,
+  MessageSquareText,
+  ExternalLink,
+  ArrowRight,
+  Filter,
+} from 'lucide-react';
+
+interface ProjectsSectionProps {
+  onNavigate: (screen: ActiveScreen) => void;
+  id?: string;
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
+  onNavigate,
+  id = 'projects',
+}) => {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [filterCategory, setFilterCategory] = useState<string>('all');
+
+  const renderIcon = (name: string) => {
+    switch (name) {
+      case 'GraduationCap':
+        return <GraduationCap className="w-5 h-5 text-[#111111]" />;
+      case 'PhoneCall':
+        return <PhoneCall className="w-5 h-5 text-[#b02f00]" />;
+      case 'Library':
+        return <Library className="w-5 h-5 text-[#0053db]" />;
+      case 'LockKeyholeOpen':
+        return <LockKeyholeOpen className="w-5 h-5 text-[#111111]" />;
+      case 'Users':
+        return <Users className="w-5 h-5 text-[#111111]" />;
+      case 'MessageSquareText':
+        return <MessageSquareText className="w-5 h-5 text-[#111111]" />;
+      default:
+        return <Users className="w-5 h-5 text-[#111111]" />;
+    }
+  };
+
+  const filteredProjects =
+    filterCategory === 'all'
+      ? PROJECTS_DATA
+      : PROJECTS_DATA.filter((p) => p.category === filterCategory);
+
+  return (
+    <section
+      className="w-full bg-[#fcf9f8] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
+      id={id}
+    >
+      <div className="max-w-7xl mx-auto space-y-10">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="bg-[#ff5722] text-white px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+              ACTIONABLE SOLUTIONS
+            </span>
+            <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
+              FLAGSHIP REFORM INITIATIVES
+            </h2>
+          </div>
+          <div className="font-mono text-xs sm:text-sm text-[#4b4731] uppercase font-bold">
+            [ 06 INTEGRATED PRISON INTERVENTIONS ]
+          </div>
+        </div>
+
+        {/* Category Filter Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <span className="font-mono text-xs font-bold uppercase text-[#111111] flex items-center gap-1 shrink-0 mr-1">
+            <Filter className="w-3.5 h-3.5" /> Filter:
+          </span>
+          {[
+            { id: 'all', label: 'All Initiatives (6)' },
+            { id: 'fellowship', label: 'Fellowship' },
+            { id: 'reentry', label: 'Re-entry & Helpline' },
+            { id: 'education', label: 'Prison School' },
+            { id: 'legal', label: 'Bail & Legal Aid' },
+            { id: 'gender', label: 'Gender Justice' },
+            { id: 'mental-health', label: 'Safe Dialogue' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setFilterCategory(tab.id)}
+              className={`px-3 py-1 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] shrink-0 cursor-pointer transition-all ${
+                filterCategory === tab.id
+                  ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
+                  : 'bg-white text-[#111111] hover:bg-[#ffe600]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid of Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-white border-[2.5px] border-[#111111] shadow-[6px_6px_0px_#111111] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_#111111] transition-all flex flex-col justify-between"
+              id={`project-card-${project.id}`}
+            >
+              <div>
+                <div
+                  className={`${project.headerBg} p-4 border-b-[2.5px] border-[#111111] flex items-center justify-between`}
+                >
+                  <span className="font-mono text-xs font-extrabold uppercase bg-[#111111] text-white px-2 py-0.5">
+                    {project.badge}
+                  </span>
+                  <div className="p-1 bg-white border border-[#111111] shadow-[2px_2px_0px_#111111]">
+                    {renderIcon(project.iconName)}
+                  </div>
+                </div>
+
+                <div className="p-6 space-y-3">
+                  <h3 className="font-['Space_Grotesk'] text-2xl uppercase text-[#111111] leading-tight font-bold">
+                    {project.title}
+                  </h3>
+                  <p className="font-['Inter'] text-sm sm:text-base text-[#4b4731] leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 pt-0 space-y-2">
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="w-full bg-[#111111] text-[#ffe600] py-2.5 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] flex items-center justify-center gap-2 hover:bg-[#ffe600] hover:text-[#111111] transition-colors cursor-pointer"
+                >
+                  <span>{project.footerTag}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Feature Spotlight: IMAGE_2 & Community Dialogue Showcase */}
+        <div className="mt-8 bg-[#f6f3f2] border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6 space-y-4">
+              <div className="inline-block bg-[#111111] text-[#ffe600] px-2.5 py-1 font-mono text-xs uppercase font-extrabold">
+                FIELD REALITY IN ACTION
+              </div>
+              <h3 className="font-['Space_Grotesk'] text-3xl sm:text-4xl uppercase text-[#111111] leading-tight font-bold">
+                COMMUNITY & PEER DIALOGUES
+              </h3>
+              <p className="font-['Inter'] text-sm sm:text-base text-[#1c1b1b] leading-relaxed">
+                Every day inside Jail No. 5, barriers of hostility, social prejudice, and despair are
+                systematically dismantled. Peer leaders and fellows facilitate circle sessions where
+                critical reflection becomes the catalyst for life beyond bars.
+              </p>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]">
+                  <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#b02f00]">
+                    DAILY
+                  </div>
+                  <div className="font-mono text-xs text-[#4b4731] uppercase font-bold">
+                    Circle Sessions
+                  </div>
+                </div>
+                <div className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]">
+                  <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#0053db]">
+                    360°
+                  </div>
+                  <div className="font-mono text-xs text-[#4b4731] uppercase font-bold">
+                    Rehab Spectrum
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative bg-white border-[2.5px] border-[#111111] shadow-[5px_5px_0px_#111111] overflow-hidden">
+                <div className="absolute top-2 left-2 bg-[#111111] text-white px-2 py-0.5 font-mono text-[11px] uppercase font-extrabold z-10">
+                  TIHAR JAIL NO. 5 ARCHIVE
+                </div>
+                <img
+                  alt="Daily life and peer dialogues in Tihar Jail No. 5"
+                  className="w-full aspect-[1.97] object-cover"
+                  src={PEER_DIALOGUE_IMAGE_URL}
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="p-3 bg-[#ffe600] border-t-[2.5px] border-[#111111] font-mono text-xs text-[#111111] font-extrabold uppercase flex items-center justify-between">
+                  <span>Daily life and peer dialogues in Tihar Jail No. 5</span>
+                  <Users className="w-4 h-4 text-[#111111]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Dossier Modal */}
+      <ProjectDossierModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        onNavigate={onNavigate}
+      />
+    </section>
+  );
+};
