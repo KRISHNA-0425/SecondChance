@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ActiveScreen } from '../types';
 import { ArrowRight, User, Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   activeScreen: ActiveScreen;
@@ -45,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                 PROJECT SECOND CHANCE
               </span>
             </div>
-            <span className="hidden xl:inline-block bg-[#ffe600] text-[#111111] font-mono text-[11px] uppercase px-2 py-0.5 border-[2px] border-[#111111] font-extrabold -rotate-2 select-none">
+            <span className="hidden 2xl:inline-block bg-[#ffe600] text-[#111111] font-mono text-[11px] uppercase px-2 py-0.5 border-[2px] border-[#111111] font-extrabold -rotate-2 select-none">
               TYCIA FOUNDATION
             </span>
           </button>
@@ -76,8 +77,11 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
         </nav>
 
         {/* Right CTA Actions */}
-        <div className="flex items-center gap-3">
-          
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Theme Dropdown (Desktop only) */}
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -93,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#fcf9f8] border-b-[3px] border-[#111111] p-4 shadow-[4px_4px_0px_#111111]">
+        <div className="lg:hidden bg-[#fcf9f8] border-b-[3px] border-[#111111] p-4 shadow-[4px_4px_0px_#111111] space-y-3">
           <div className="grid grid-cols-2 gap-2">
             {navItems.map((item) => {
               const isActive = activeScreen === item.id;
@@ -111,6 +115,14 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                 </button>
               );
             })}
+          </div>
+
+          {/* Mobile Theme Preference Selector */}
+          <div className="pt-2 border-t border-black/15 flex items-center justify-between">
+            <span className="font-mono text-xs uppercase font-extrabold text-[#4b4731]">
+              DISPLAY THEME:
+            </span>
+            <ThemeToggle />
           </div>
         </div>
       )}
