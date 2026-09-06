@@ -204,3 +204,87 @@ html.dark textarea:focus {
 html.dark [role="dialog"] {
   background-color: #141414 !important;
 }
+
+/* =========================================================
+   CUSTOM NEO-BRUTALIST THEMED SCROLLBAR
+   ========================================================= */
+
+/* Firefox / Standards-based scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ffe600 #f0ece9;
+}
+
+html.dark {
+  scrollbar-color: #ffe600 #141414;
+}
+
+/* WebKit / Chromium / Safari scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0ece9;
+  border-left: 2px solid #111111;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  border-left: none;
+  border-top: 2px solid #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border: 2px solid #111111;
+  border-radius: 0px;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5), inset -1px -1px 0px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+  border-color: #111111;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #111111;
+  border-color: #ffe600;
+}
+
+::-webkit-scrollbar-corner {
+  background: #111111;
+}
+
+/* Dark Mode Scrollbar Overrides */
+html.dark ::-webkit-scrollbar-track {
+  background: #141414;
+  border-left: 2px solid #333333;
+}
+
+html.dark ::-webkit-scrollbar-track:horizontal {
+  border-left: none;
+  border-top: 2px solid #333333;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border: 2px solid #333333;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.25), inset -1px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+  border-color: #ffe600;
+}
+
+html.dark ::-webkit-scrollbar-thumb:active {
+  background: #ffffff;
+  border-color: #ffe600;
+}
+
+html.dark ::-webkit-scrollbar-corner {
+  background: #0d0d0d;
+}
+
