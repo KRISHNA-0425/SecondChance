@@ -37,7 +37,7 @@ export const FellowshipSection: React.FC = () => {
       title: 'FOUNDATION & PRISON JURISPRUDENCE',
       description:
         'Intensive orientation on the Model Prison Manual, human rights standards, criminological frameworks, and trauma-informed psychosocial safety.',
-      badgeBg: 'bg-[#ffe600]',
+      badgeBg: 'bg-[#deb04a]',
     },
     {
       phase: 'PHASE 02',
@@ -45,7 +45,7 @@ export const FellowshipSection: React.FC = () => {
       title: 'IN-PRISON IMMERSION & TEACHING',
       description:
         'Daily entry into Jail No. 5 to facilitate foundational literacy, arithmetic bootcamps, and life skills circles directly with youth inmates.',
-      badgeBg: 'bg-[#dbe1ff]',
+      badgeBg: 'bg-[#e8edf3]',
     },
     {
       phase: 'PHASE 03',
@@ -53,7 +53,7 @@ export const FellowshipSection: React.FC = () => {
       title: 'PROJECT INCUBATION & RESEARCH',
       description:
         'Design, pilot, and test a bespoke intervention module (e.g. anti-violence unlearning, digital bail registry, or trade certification track).',
-      badgeBg: 'bg-[#ffdbd1]',
+      badgeBg: 'bg-[#f2e8e3]',
     },
     {
       phase: 'PHASE 04',
@@ -61,7 +61,7 @@ export const FellowshipSection: React.FC = () => {
       title: 'REINTEGRATION & POLICY HANDOVER',
       description:
         'Institutionalize student records into NIOS/IGNOU, transition peer leaders, and publish an empirical fieldwork whitepaper for correctional reform.',
-      badgeBg: 'bg-[#ff5722]',
+      badgeBg: 'bg-[#c05a3e]',
     },
   ];
 
@@ -83,7 +83,7 @@ export const FellowshipSection: React.FC = () => {
         <AnimatedSection direction="up" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
             <div>
-              <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2 border border-[#111111]">
+              <span className="bg-[#deb04a] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2 border border-[#111111]">
                 12-MONTH LEADERSHIP FELLOWSHIP
               </span>
               <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
@@ -91,7 +91,7 @@ export const FellowshipSection: React.FC = () => {
               </h2>
             </div>
             <motion.div
-              className="font-mono text-xs text-[#b02f00] font-bold uppercase bg-[#ffdbd1] px-3 py-1.5 border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
+              className="font-mono text-xs text-[#913b28] font-bold uppercase bg-[#f2e8e3] px-3 py-1.5 border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
               animate={{ opacity: [1, 0.6, 1] }}
               transition={{ repeat: Infinity, duration: 2.5 }}
             >
@@ -119,21 +119,21 @@ export const FellowshipSection: React.FC = () => {
                   ₹35,000/mo
                 </div>
               </div>
-              <div className="p-3 bg-[#ffe600] border-[2px] border-[#111111]">
+              <div className="p-3 bg-[#deb04a] border-[2px] border-[#111111]">
                 <div className="font-mono text-xs text-[#111111] uppercase font-bold">Duration</div>
                 <div className="font-['Space_Grotesk'] text-xl font-bold text-[#111111] mt-0.5">
                   12 Months
                 </div>
               </div>
-              <div className="p-3 bg-[#dbe1ff] border-[2px] border-[#111111]">
-                <div className="font-mono text-xs text-[#0053db] uppercase font-bold">Location</div>
-                <div className="font-['Space_Grotesk'] text-xl font-bold text-[#0053db] mt-0.5">
+              <div className="p-3 bg-[#e8edf3] border-[2px] border-[#111111]">
+                <div className="font-mono text-xs text-[#3f5670] uppercase font-bold">Location</div>
+                <div className="font-['Space_Grotesk'] text-xl font-bold text-[#3f5670] mt-0.5">
                   Tihar Jail 5
                 </div>
               </div>
-              <div className="p-3 bg-[#ffdbd1] border-[2px] border-[#111111]">
-                <div className="font-mono text-xs text-[#b02f00] uppercase font-bold">Seats</div>
-                <div className="font-['Space_Grotesk'] text-xl font-bold text-[#b02f00] mt-0.5">
+              <div className="p-3 bg-[#f2e8e3] border-[2px] border-[#111111]">
+                <div className="font-mono text-xs text-[#913b28] uppercase font-bold">Seats</div>
+                <div className="font-['Space_Grotesk'] text-xl font-bold text-[#913b28] mt-0.5">
                   15 Fellows
                 </div>
               </div>
@@ -141,24 +141,24 @@ export const FellowshipSection: React.FC = () => {
           </div>
 
           <div className="lg:col-span-4 bg-[#111111] text-white p-6 border-[2px] border-[#111111] space-y-4">
-            <div className="font-mono text-xs uppercase text-[#ffe600] font-bold">
+            <div className="font-mono text-xs uppercase text-[#deb04a] font-bold">
               ELIGIBILITY CRITERIA:
             </div>
             <ul className="space-y-2 text-xs font-['Inter']">
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ffe600] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#deb04a] shrink-0 mt-0.5" />
                 <span>Indian citizen aged 21–32 years</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ffe600] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#deb04a] shrink-0 mt-0.5" />
                 <span>Bachelor's degree in any discipline (Law, Social Work, Psychology preferred)</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ffe600] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#deb04a] shrink-0 mt-0.5" />
                 <span>Demonstrated commitment to restorative justice & civil liberties</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ffe600] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#deb04a] shrink-0 mt-0.5" />
                 <span>Full-time in-person residency in New Delhi NCR</span>
               </li>
             </ul>
@@ -213,7 +213,7 @@ export const FellowshipSection: React.FC = () => {
         <div className="bg-[#f6f3f2] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] max-w-4xl mx-auto">
           <div className="border-b-[2.5px] border-[#111111] pb-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <span className="bg-[#111111] text-[#ffe600] px-2.5 py-0.5 font-mono text-xs font-bold uppercase inline-block mb-1">
+              <span className="bg-[#111111] text-[#deb04a] px-2.5 py-0.5 font-mono text-xs font-bold uppercase inline-block mb-1">
                 ONLINE CANDIDATE PORTAL
               </span>
               <h3 className="font-['Space_Grotesk'] text-2xl sm:text-3xl font-extrabold uppercase text-[#111111]">
@@ -242,7 +242,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. Ananya Sharma"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#fffde7] focus:outline-none"
+                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -255,7 +255,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="ananya@example.com"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#fffde7] focus:outline-none"
+                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#fffde7] focus:outline-none"
+                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -301,7 +301,7 @@ export const FellowshipSection: React.FC = () => {
                         }
                         setCurrentStep(2);
                       }}
-                      className="bg-[#111111] text-[#ffe600] px-6 py-3 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] hover:bg-[#ffe600] hover:text-[#111111] transition-all cursor-pointer"
+                      className="bg-[#111111] text-[#deb04a] px-6 py-3 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] hover:bg-[#deb04a] hover:text-[#111111] transition-all cursor-pointer"
                     >
                       Proceed to Motivation & Statement →
                     </button>
@@ -323,7 +323,7 @@ export const FellowshipSection: React.FC = () => {
                         setFormData({ ...formData, statementOfPurpose: e.target.value })
                       }
                       placeholder="Discuss your values, personal orientation, and what drew you to correctional reform..."
-                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#fffde7] focus:outline-none"
+                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
                     ></textarea>
                   </div>
 
@@ -338,7 +338,7 @@ export const FellowshipSection: React.FC = () => {
                         setFormData({ ...formData, priorVolunteerExperience: e.target.value })
                       }
                       placeholder="Details of any previous work with youth, marginalized populations, teaching, or civil rights..."
-                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#fffde7] focus:outline-none"
+                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
                     ></textarea>
                   </div>
 
@@ -353,7 +353,7 @@ export const FellowshipSection: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="bg-[#ff5722] text-[#111111] px-7 py-3 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#ffe600] transition-all flex items-center gap-2 cursor-pointer"
+                      className="bg-[#c05a3e] text-white px-7 py-3 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#deb04a] hover:text-[#111111] transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>Submit Fellowship Application</span>
@@ -364,13 +364,13 @@ export const FellowshipSection: React.FC = () => {
             </form>
           ) : (
             <div className="bg-white border-[3px] border-[#111111] p-6 sm:p-8 space-y-4 text-center">
-              <div className="w-16 h-16 bg-[#ffe600] border-[2.5px] border-[#111111] rounded-full mx-auto flex items-center justify-center shadow-[3px_3px_0px_#111111]">
+              <div className="w-16 h-16 bg-[#deb04a] border-[2.5px] border-[#111111] rounded-full mx-auto flex items-center justify-center shadow-[3px_3px_0px_#111111]">
                 <Sparkles className="w-8 h-8 text-[#111111]" />
               </div>
               <h4 className="font-['Space_Grotesk'] text-2xl sm:text-3xl font-bold uppercase text-[#111111]">
                 APPLICATION RECEIVED // COHORT 2025
               </h4>
-              <div className="inline-block bg-[#111111] text-[#ffe600] px-3 py-1 font-mono text-xs font-bold uppercase">
+              <div className="inline-block bg-[#111111] text-[#deb04a] px-3 py-1 font-mono text-xs font-bold uppercase">
                 APPLICATION ID: {applicationId}
               </div>
               <p className="font-['Inter'] text-sm sm:text-base text-[#4b4731] max-w-lg mx-auto">

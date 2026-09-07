@@ -34,9 +34,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       case 'GraduationCap':
         return <GraduationCap className="w-5 h-5 text-[#111111]" />;
       case 'PhoneCall':
-        return <PhoneCall className="w-5 h-5 text-[#b02f00]" />;
+        return <PhoneCall className="w-5 h-5 text-[#913b28]" />;
       case 'Library':
-        return <Library className="w-5 h-5 text-[#0053db]" />;
+        return <Library className="w-5 h-5 text-[#3f5670]" />;
       case 'LockKeyholeOpen':
         return <LockKeyholeOpen className="w-5 h-5 text-[#111111]" />;
       case 'Users':
@@ -55,7 +55,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
   return (
     <section
-      className="w-full bg-[#fcf9f8] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
+      className="w-full bg-[#f8f6f2] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
       id={id}
     >
       <div className="max-w-7xl mx-auto space-y-10">
@@ -63,7 +63,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         <AnimatedSection direction="up" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="bg-[#ff5722] text-white px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+              <span className="bg-[#c05a3e] text-white px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
                 ACTIONABLE SOLUTIONS
               </span>
               <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
@@ -98,7 +98,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   className={`px-3 py-1 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] shrink-0 cursor-pointer transition-all relative ${
                     filterCategory === tab.id
                       ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
-                      : 'bg-white text-[#111111] hover:bg-[#ffe600]'
+                      : 'bg-white text-[#111111] hover:bg-[#deb04a]'
                   }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -159,7 +159,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   <div className="p-6 pt-0 space-y-2">
                     <motion.button
                       onClick={() => setSelectedProject(project)}
-                      className="w-full bg-[#111111] text-[#ffe600] py-2.5 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] flex items-center justify-center gap-2 hover:bg-[#ffe600] hover:text-[#111111] transition-colors cursor-pointer"
+                      className="w-full bg-[#111111] text-[#deb04a] py-2.5 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] flex items-center justify-center gap-2 hover:bg-[#deb04a] hover:text-[#111111] transition-colors cursor-pointer"
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -178,7 +178,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <div className="mt-8 bg-[#f6f3f2] border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-4">
-                <div className="inline-block bg-[#111111] text-[#ffe600] px-2.5 py-1 font-mono text-xs uppercase font-extrabold">
+                <div className="inline-block bg-[#111111] text-[#deb04a] px-2.5 py-1 font-mono text-xs uppercase font-extrabold">
                   FIELD REALITY IN ACTION
                 </div>
                 <h3 className="font-['Space_Grotesk'] text-3xl sm:text-4xl uppercase text-[#111111] leading-tight font-bold">
@@ -195,7 +195,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                       whileHover={{ translateY: -2, boxShadow: '4px 4px 0px #111111' }}
                     >
-                      <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#b02f00]">
+                      <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#913b28]">
                         DAILY
                       </div>
                       <div className="font-mono text-xs text-[#4b4731] uppercase font-bold">
@@ -208,7 +208,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                       whileHover={{ translateY: -2, boxShadow: '4px 4px 0px #111111' }}
                     >
-                      <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#0053db]">
+                      <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#3f5670]">
                         360°
                       </div>
                       <div className="font-mono text-xs text-[#4b4731] uppercase font-bold">
@@ -231,7 +231,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     loading="eager"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="p-3 bg-[#ffe600] border-t-[2.5px] border-[#111111] font-mono text-xs text-[#111111] font-extrabold uppercase flex items-center justify-between">
+                  <div className="p-3 bg-[#deb04a] border-t-[2.5px] border-[#111111] font-mono text-xs text-[#111111] font-extrabold uppercase flex items-center justify-between">
                     <span>Daily life and peer dialogues in Tihar Jail No. 5</span>
                     <Users className="w-4 h-4 text-[#111111]" />
                   </div>

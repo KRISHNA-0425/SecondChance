@@ -24,7 +24,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
         <AnimatedSection direction="up" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
             <div>
-              <span className="bg-[#b02f00] text-white px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+              <span className="bg-[#913b28] text-white px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
                 VOICES FROM THE INSIDE
               </span>
               <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
@@ -41,7 +41,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
         {/* Hero Quote Spotlight Banner */}
         <AnimatedSection direction="up" delay={0.15} duration={0.7}>
           <motion.div
-            className="bg-[#ffe600] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] relative overflow-hidden"
+            className="bg-[#deb04a] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] relative overflow-hidden"
             whileHover={{
               boxShadow: '10px 10px 0px #111111',
               transition: { type: 'spring', stiffness: 200 },
@@ -52,7 +52,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
             </div>
 
             <div className="relative z-10 space-y-4 max-w-3xl">
-              <span className="bg-[#111111] text-[#ffe600] px-2.5 py-1 font-mono text-xs uppercase font-extrabold inline-block">
+              <span className="bg-[#111111] text-[#deb04a] px-2.5 py-1 font-mono text-xs uppercase font-extrabold inline-block">
                 TESTIMONIAL // WARD NO. 5 (YOUTH JAIL)
               </span>
               <blockquote className="font-['Space_Grotesk'] text-2xl sm:text-4xl uppercase text-[#111111] leading-tight font-bold">
@@ -92,7 +92,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                     }}
                     className={`w-full text-left p-4 border-[2.5px] border-[#111111] transition-all cursor-pointer flex items-center justify-between ${
                       isSelected
-                        ? 'bg-[#111111] text-white shadow-[4px_4px_0px_#ffe600] translate-x-1'
+                        ? 'bg-[#111111] text-white shadow-[4px_4px_0px_#deb04a] translate-x-1'
                         : 'bg-white text-[#111111] hover:bg-[#f6f3f2] shadow-[3px_3px_0px_#111111]'
                     }`}
                     whileHover={
@@ -114,7 +114,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                         </span>
                         <span
                           className={`font-mono text-xs px-1.5 py-0.2 ${
-                            isSelected ? 'bg-[#ffe600] text-[#111111]' : 'bg-[#e5e2e1] text-[#111111]'
+                            isSelected ? 'bg-[#deb04a] text-[#111111]' : 'bg-[#e5e2e1] text-[#111111]'
                           } font-bold`}
                         >
                           Age {story.age}
@@ -122,7 +122,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                       </div>
                       <div
                         className={`font-mono text-xs mt-1 ${
-                          isSelected ? 'text-[#ffdbd1]' : 'text-[#4b4731]'
+                          isSelected ? 'text-[#f2e8e3]' : 'text-[#4b4731]'
                         }`}
                       >
                         {story.ward}
@@ -130,7 +130,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                     </div>
                     <ChevronRight
                       className={`w-5 h-5 ${
-                        isSelected ? 'text-[#ffe600]' : 'text-[#111111]'
+                        isSelected ? 'text-[#deb04a]' : 'text-[#111111]'
                       } shrink-0`}
                     />
                   </motion.button>
@@ -152,20 +152,20 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
               >
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b-[2px] border-[#111111] pb-4">
                   <div>
-                    <span className="font-mono text-xs uppercase font-extrabold bg-[#0053db] text-white px-2 py-0.5">
+                    <span className="font-mono text-xs uppercase font-extrabold bg-[#3f5670] text-white px-2 py-0.5">
                       INITIATIVE: {selectedStory.initiative}
                     </span>
                     <h3 className="font-['Space_Grotesk'] text-2xl sm:text-3xl font-bold uppercase text-[#111111] mt-1">
                       {selectedStory.name}'s Pathway
                     </h3>
                   </div>
-                  <span className="font-mono text-xs text-[#b02f00] font-extrabold uppercase bg-[#ffdbd1] px-2 py-1 border border-[#111111]">
+                  <span className="font-mono text-xs text-[#913b28] font-extrabold uppercase bg-[#f2e8e3] px-2 py-1 border border-[#111111]">
                     {selectedStory.ward}
                   </span>
                 </div>
 
                 <motion.div
-                  className="p-4 bg-[#f6f3f2] border-l-4 border-[#b02f00] italic font-['Inter'] text-base text-[#1c1b1b]"
+                  className="p-4 bg-[#f6f3f2] border-l-4 border-[#913b28] italic font-['Inter'] text-base text-[#1c1b1b]"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
@@ -183,14 +183,14 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                 </div>
 
                 <motion.div
-                  className="p-3.5 bg-[#dbe1ff] border-[2px] border-[#111111] flex items-center gap-3"
+                  className="p-3.5 bg-[#e8edf3] border-[2px] border-[#111111] flex items-center gap-3"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#0053db] shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#3f5670] shrink-0" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase font-bold text-[#0053db]">
+                    <div className="font-mono text-[11px] uppercase font-bold text-[#3f5670]">
                       VERIFIED MILESTONE
                     </div>
                     <div className="font-['Space_Grotesk'] text-sm sm:text-base font-bold text-[#111111]">
@@ -203,7 +203,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                   <div className="pt-2">
                     <motion.button
                       onClick={() => setShowLetterPreview(!showLetterPreview)}
-                      className="bg-[#111111] text-[#ffe600] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] flex items-center gap-2 hover:bg-[#ffe600] hover:text-[#111111] transition-colors cursor-pointer"
+                      className="bg-[#111111] text-[#deb04a] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] flex items-center gap-2 hover:bg-[#deb04a] hover:text-[#111111] transition-colors cursor-pointer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -222,8 +222,8 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                           transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-3 p-4 bg-[#fff9c4] border-[2px] border-[#111111] font-mono text-sm text-[#111111] shadow-[2px_2px_0px_#111111]">
-                            <div className="text-xs uppercase font-bold text-[#b02f00] mb-1">
+                          <div className="mt-3 p-4 bg-[#fbf8f0] border-[2px] border-[#111111] font-mono text-sm text-[#111111] shadow-[2px_2px_0px_#111111]">
+                            <div className="text-xs uppercase font-bold text-[#913b28] mb-1">
                               ORIGINAL DISPATCH TRANSLATION:
                             </div>
                             <div className="italic font-serif text-base mb-2">

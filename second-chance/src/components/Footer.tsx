@@ -64,12 +64,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
           <AnimatedSection className="md:col-span-6 space-y-4" direction="up" duration={0.6}>
             <div className="flex flex-wrap items-center gap-2">
               <motion.span
-                className="font-['Space_Grotesk'] text-2xl uppercase tracking-tighter font-extrabold bg-[#ffe600] text-[#111111] px-3 py-1 border-[2px] border-white"
+                className="font-['Space_Grotesk'] text-2xl uppercase tracking-tighter font-extrabold bg-[#deb04a] text-[#111111] px-3 py-1 border-[2px] border-white"
                 whileHover={{ rotate: -1, scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
               >
                 PROJECT SECOND CHANCE
               </motion.span>
-              <span className="font-mono text-xs uppercase bg-[#ff5722] text-white px-2 py-1 font-bold border border-white">
+              <span className="font-mono text-xs uppercase bg-[#c05a3e] text-white px-2 py-1 font-bold border border-white">
                 TYCIA FOUNDATION
               </span>
             </div>
@@ -77,14 +77,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
               Pioneering restorative justice, functional literacy, and holistic rehabilitation inside
               Delhi Prisons Tihar Jail No. 5 (Youth Jail) for youth aged 18 to 21 years.
             </p>
-            <div className="flex items-center gap-2 text-xs font-mono text-[#ffe600]">
-              <ShieldCheck className="w-4 h-4 text-[#ffe600]" />
+            <div className="flex items-center gap-2 text-xs font-mono text-[#deb04a]">
+              <ShieldCheck className="w-4 h-4 text-[#deb04a]" />
               <span>Authorized under Directorate General of Delhi Prisons</span>
             </div>
 
             {/* Social Handles — staggered pop-in */}
             <div className="pt-2">
-              <div className="font-mono text-xs uppercase font-extrabold text-[#ffe600] tracking-wider mb-2.5">
+              <div className="font-mono text-xs uppercase font-extrabold text-[#deb04a] tracking-wider mb-2.5">
                 CONNECT & SOCIAL HANDLES:
               </div>
               <StaggerContainer className="flex flex-wrap items-center gap-2.5" staggerDelay={0.08}>
@@ -103,10 +103,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
                             e.preventDefault();
                           }
                         }}
-                        className="w-9 h-9 flex items-center justify-center bg-[#1a1a1a] text-white border-[1.5px] border-white/80 hover:bg-[#ffe600] hover:text-[#111111] hover:border-[#ffe600] shadow-[2px_2px_0px_#ffffff] active:translate-y-0 active:shadow-none transition-all duration-150 cursor-pointer"
+                        className="w-9 h-9 flex items-center justify-center bg-[#1a1a1a] text-white border-[1.5px] border-white/80 hover:bg-[#deb04a] hover:text-[#111111] hover:border-[#deb04a] shadow-[2px_2px_0px_#ffffff] active:translate-y-0 active:shadow-none transition-all duration-150 cursor-pointer"
                         whileHover={{
                           translateY: -4,
-                          boxShadow: '3px 3px 0px #ffe600',
+                          boxShadow: '3px 3px 0px #deb04a',
                           transition: { type: 'spring', stiffness: 400, damping: 15 },
                         }}
                         whileTap={{ scale: 0.9 }}
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
 
           {/* Quick Nav Links */}
           <AnimatedSection className="md:col-span-3 space-y-3" direction="up" delay={0.15} duration={0.6}>
-            <div className="font-mono text-xs uppercase font-extrabold text-[#ffe600] tracking-wider">
+            <div className="font-mono text-xs uppercase font-extrabold text-[#deb04a] tracking-wider">
               PORTAL NAVIGATION:
             </div>
             <ul className="space-y-1.5 font-mono text-xs">
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
                 <li key={item.id}>
                   <motion.button
                     onClick={() => onNavigate(item.id)}
-                    className="text-neutral-300 hover:text-[#ffe600] uppercase transition-colors cursor-pointer"
+                    className="text-neutral-300 hover:text-[#deb04a] uppercase transition-colors cursor-pointer"
                     whileHover={{ x: 4, transition: { type: 'spring', stiffness: 300 } }}
                   >
                     {item.label}
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
 
           {/* Compliance & Audit */}
           <AnimatedSection className="md:col-span-3 space-y-3" direction="up" delay={0.3} duration={0.6}>
-            <div className="font-mono text-xs uppercase font-extrabold text-[#ffe600] tracking-wider">
+            <div className="font-mono text-xs uppercase font-extrabold text-[#deb04a] tracking-wider">
               REGISTRATION & AUDIT:
             </div>
             <div className="space-y-2 font-mono text-xs text-neutral-300">
@@ -158,20 +158,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
                 className="p-2 bg-white/5 border border-white/20"
                 whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)', transition: { duration: 0.2 } }}
               >
-                <span className="text-[#ffe600] font-bold">SECTION 8 NON-PROFIT:</span> CIN
+                <span className="text-[#deb04a] font-bold">SECTION 8 NON-PROFIT:</span> CIN
                 U85300DL2018NPL334182
               </motion.div>
               <motion.div
                 className="p-2 bg-white/5 border border-white/20"
                 whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)', transition: { duration: 0.2 } }}
               >
-                <span className="text-[#ffe600] font-bold">TAX EXEMPTION:</span> 80G & 12A Certified
+                <span className="text-[#deb04a] font-bold">TAX EXEMPTION:</span> 80G & 12A Certified
               </motion.div>
               <motion.div
                 className="p-2 bg-white/5 border border-white/20"
                 whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)', transition: { duration: 0.2 } }}
               >
-                <span className="text-[#ffe600] font-bold">DARPAN ID:</span> DL/2018/0192931
+                <span className="text-[#deb04a] font-bold">DARPAN ID:</span> DL/2018/0192931
               </motion.div>
             </div>
           </AnimatedSection>
@@ -187,7 +187,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
               {onReplayIntro && (
                 <motion.button
                   onClick={onReplayIntro}
-                  className="bg-white/10 text-white hover:bg-[#ffe600] hover:text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-white/60 transition-colors cursor-pointer"
+                  className="bg-white/10 text-white hover:bg-[#deb04a] hover:text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-white/60 transition-colors cursor-pointer"
                   title="Replay intro animation"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
               )}
               <motion.button
                 onClick={scrollToTop}
-                className="bg-white text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-white flex items-center gap-1 hover:bg-[#ffe600] transition-colors cursor-pointer"
+                className="bg-white text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-white flex items-center gap-1 hover:bg-[#deb04a] transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05, translateY: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

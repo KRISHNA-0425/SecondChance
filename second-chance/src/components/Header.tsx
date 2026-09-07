@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                 PROJECT SECOND CHANCE
               </span>
             </div>
-            <span className="hidden 2xl:inline-block bg-[#ffe600] text-[#111111] font-mono text-[11px] uppercase px-2 py-0.5 border-[2px] border-[#111111] font-extrabold -rotate-2 select-none">
+            <span className="hidden 2xl:inline-block bg-[#deb04a] text-[#111111] font-mono text-[11px] uppercase px-2 py-0.5 border-[2px] border-[#111111] font-extrabold -rotate-2 select-none">
               TYCIA FOUNDATION
             </span>
           </motion.button>
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                 className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider cursor-pointer relative ${
                   isActive
                     ? 'bg-[#111111] text-white font-extrabold shadow-[1px_1px_0px_#111111]'
-                    : 'text-[#4b4731] hover:bg-[#ffe600] hover:text-[#111111] font-bold'
+                    : 'text-[#4b4731] hover:bg-[#deb04a] hover:text-[#111111] font-bold'
                 }`}
                 id={`nav-link-${item.id}`}
                 whileHover={{ scale: 1.05 }}
@@ -127,12 +127,11 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="lg:hidden bg-[#fcf9f8] border-b-[3px] border-[#111111] p-4 shadow-[4px_4px_0px_#111111] space-y-3"
+            className="lg:hidden bg-[#fcf9f8] dark:bg-[#141414] border-b-[3px] border-[#111111] dark:border-white/40 p-4 shadow-[4px_4px_0px_#111111] dark:shadow-[4px_4px_0px_#deb04a] space-y-3.5"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ overflow: 'hidden' }}
           >
             <motion.div
               className="grid grid-cols-2 gap-2"
@@ -149,10 +148,10 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                   <motion.button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`p-2.5 font-mono text-xs uppercase tracking-wider font-bold border-[2px] border-[#111111] text-left ${
+                    className={`p-2.5 font-mono text-xs uppercase tracking-wider font-bold border-[2px] border-[#111111] dark:border-white/40 text-left ${
                       isActive
-                        ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
-                        : 'bg-white text-[#111111] hover:bg-[#ffe600]'
+                        ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111] dark:bg-[#deb04a] dark:text-[#111111]'
+                        : 'bg-white dark:bg-[#1a1a1a] text-[#111111] dark:text-[#f3f3f3] hover:bg-[#deb04a] dark:hover:bg-[#deb04a] dark:hover:text-[#111111]'
                     }`}
                     variants={{
                       hidden: { opacity: 0, y: -10, scale: 0.95 },
@@ -166,17 +165,20 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
               })}
             </motion.div>
 
-            {/* Mobile Theme Preference Selector */}
+            {/* Mobile Theme Preference Selector - Fully visible options */}
             <motion.div
-              className="pt-2 border-t border-black/15 flex items-center justify-between"
+              className="pt-3 border-t-[2px] border-[#111111]/20 dark:border-white/20 space-y-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
             >
-              <span className="font-mono text-xs uppercase font-extrabold text-[#4b4731]">
-                DISPLAY THEME:
-              </span>
-              <ThemeToggle />
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs uppercase font-extrabold text-[#4b4731] dark:text-[#c2bead] flex items-center gap-1.5">
+                  <span className="w-2 h-2 bg-[#deb04a] border border-[#111111] inline-block" />
+                  DISPLAY THEME:
+                </span>
+              </div>
+              <ThemeToggle variant="segmented" />
             </motion.div>
           </motion.div>
         )}

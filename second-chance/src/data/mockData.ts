@@ -11,14 +11,14 @@ export const FINDINGS_DATA: FindingItem[] = [
     id: 'unemployable',
     tag: 'LIVELIHOOD VOID',
     tagBg: '#111111',
-    tagText: '#ffe600',
+    tagText: '#deb04a',
     stat: '93%',
     statColor: '#111111',
     title: 'Unemployable on industrial parameters',
     description:
       'Where 97% work in unorganised sectors post release without job security, contracts, or living wages.',
     footer: 'SECTOR: UNORGANISED LABOUR CYCLE',
-    bgClass: 'bg-[#ffe600]',
+    bgClass: 'bg-[#deb04a]',
     iconName: 'BriefcaseOff',
     details: {
       sampleSize: 600,
@@ -32,10 +32,10 @@ export const FINDINGS_DATA: FindingItem[] = [
   {
     id: 'literacy-gap',
     tag: 'EDUCATION GAP',
-    tagBg: '#b02f00',
+    tagBg: '#913b28',
     tagText: '#ffffff',
     stat: '63%',
-    statColor: '#b02f00',
+    statColor: '#913b28',
     title: 'Competency below 5th grade level',
     description:
       'In addition, 16% of youth inmates cannot read or write alphabets in any language upon initial detention.',
@@ -54,15 +54,15 @@ export const FINDINGS_DATA: FindingItem[] = [
   {
     id: 'mental-health',
     tag: 'TRAUMA PROFILE',
-    tagBg: '#0053db',
+    tagBg: '#3f5670',
     tagText: '#ffffff',
     stat: '33%',
-    statColor: '#0053db',
+    statColor: '#3f5670',
     title: '1 out of 3 have acute mental health history',
     description:
       'Directly linked to disturbed childhoods, chronic substance addiction, domestic conflict, and single parenting environments.',
     footer: 'DIAGNOSTIC: UNADDRESSED PSYCHOSOCIAL TRAUMA',
-    bgClass: 'bg-[#dbe1ff]',
+    bgClass: 'bg-[#e8edf3]',
     iconName: 'Brain',
     details: {
       sampleSize: 600,
@@ -84,7 +84,7 @@ export const FINDINGS_DATA: FindingItem[] = [
     description:
       'Urgent requirement for intensive psychological conditioning to dismantle repeat offender trajectories and negative peer networks.',
     footer: 'TARGET: VICIOUS CYCLE INTERRUPT',
-    bgClass: 'bg-[#ffdbd1]',
+    bgClass: 'bg-[#f2e8e3]',
     iconName: 'RefreshCw',
     details: {
       sampleSize: 600,
@@ -99,14 +99,14 @@ export const FINDINGS_DATA: FindingItem[] = [
     id: 'gender-crime',
     tag: 'CRITICAL SYSTEM FINDING',
     tagBg: '#111111',
-    tagText: '#ff5722',
+    tagText: '#c05a3e',
     stat: '22%',
     statColor: '#111111',
     title: 'More than 22% incarcerated for crimes against women',
     description:
       'Of this cohort, 78% are charged under Rape or POCSO statutes. This demanded our creation of bespoke gender-sensitization curricula inside prison blocks.',
     footer: 'DATA RIGOR: MANDATORY CURRICULAR RESTRUCTURE // 78% POCSO/RAPE ACCUSED',
-    bgClass: 'bg-[#ff5722]',
+    bgClass: 'bg-[#c05a3e]',
     colSpan: 'md:col-span-2 lg:col-span-2',
     iconName: 'AlertOctagon',
     subStat: '78% POCSO/RAPE ACCUSED',
@@ -125,14 +125,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'fellowship',
     badge: 'FULL-TIME IMMERSION',
-    badgeColor: 'bg-[#ffe600]',
+    badgeColor: 'bg-[#deb04a]',
     title: 'Second Chance Fellowship',
     subtitle: '12-Month In-Prison Leadership Program',
     description:
       'A 12-month full-time fellowship program focusing on developing quality interventions and facilitating sessions on life skills and education inside prisons while designing radical reform projects.',
     footerTag: 'FELLOWSHIP DOSSIER',
     iconName: 'GraduationCap',
-    headerBg: 'bg-[#ffe600]',
+    headerBg: 'bg-[#deb04a]',
     category: 'fellowship',
     url: 'http://www.secondchancefellowship.org',
     stats: [
@@ -151,14 +151,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'kunji',
     badge: 'TELE-NAVIGATION',
-    badgeColor: 'bg-[#ffdbd1]',
+    badgeColor: 'bg-[#f2e8e3]',
     title: 'Kunji - Prison Helpline',
     subtitle: 'Post-Release Re-entry Support Grid',
     description:
       'Facilitating ex-inmates over the phone with location-wise databases of partner NGOs and government institutions addressing drug de-addiction, mental health, housing, employment, legal aid, and re-entry shock.',
     footerTag: 'ACTIVE CASE LINKAGE NETWORK',
     iconName: 'PhoneCall',
-    headerBg: 'bg-[#ffdbd1]',
+    headerBg: 'bg-[#f2e8e3]',
     category: 'reentry',
     stats: [
       { label: 'Directory Size', value: '450+ Verified NGOs' },
@@ -176,14 +176,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'school',
     badge: 'DAILY ACADEMY',
-    badgeColor: 'bg-[#dbe1ff]',
+    badgeColor: 'bg-[#e8edf3]',
     title: 'Better-Life Prison School',
     subtitle: 'Comprehensive Daily Inmate Academy',
     description:
       'A full day long operational academy inside prison walls offering functional literacy, wage/self-skill vocational training, personal life skills, substance de-addiction therapy, and integrated healthcare support.',
     footerTag: 'FULL-DAY OPERATIONAL ACADEMY',
     iconName: 'Library',
-    headerBg: 'bg-[#dbe1ff]',
+    headerBg: 'bg-[#e8edf3]',
     category: 'education',
     stats: [
       { label: 'Daily Enrolled', value: '180+ Inmates' },
@@ -201,14 +201,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'rihai',
     badge: 'LEGAL BAIL AID',
-    badgeColor: 'bg-[#ffe600]',
+    badgeColor: 'bg-[#deb04a]',
     title: 'Project Rihai',
     subtitle: 'Bail Crowdfunding & Legal Representation',
     description:
       'Crowdfunding platform to secure bail release for prisoners who served their sentences but remain languishing behind bars solely due to indigent families unable to deposit bail sureties. Validated by prison staff evaluations.',
     footerTag: 'COMMUNITY-FUNDED RELEASE',
     iconName: 'LockKeyholeOpen',
-    headerBg: 'bg-[#ffe600]',
+    headerBg: 'bg-[#deb04a]',
     category: 'legal',
     stats: [
       { label: 'Released Inmates', value: '120+ Youth' },
@@ -226,14 +226,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'unlearn',
     badge: 'GENDER JUSTICE',
-    badgeColor: 'bg-[#ff5722]',
+    badgeColor: 'bg-[#c05a3e]',
     title: 'Project Unlearn',
     subtitle: 'Anti-Violence & Masculinity Circles',
     description:
       'Context-based education & life skills intervention driven by young incarcerated men. Formulated directly to dismantle patriarchal violent notions and eliminate gender-based crime through intensive peer-led workshops.',
     footerTag: 'ANTI-VIOLENCE WORKSHOPS',
     iconName: 'Users',
-    headerBg: 'bg-[#ff5722]',
+    headerBg: 'bg-[#c05a3e]',
     category: 'gender',
     stats: [
       { label: 'POCSO Accused Engaged', value: '350+ Inmates' },
@@ -279,40 +279,40 @@ export const IMPACT_METRICS: ImpactMetric[] = [
   {
     id: 'recidivism',
     badge: 'RECIDIVISM RATE',
-    badgeBg: 'bg-[#ff5722]',
+    badgeBg: 'bg-[#c05a3e]',
     badgeText: 'text-white',
     stat: '-3%',
-    statColor: 'text-[#b02f00]',
+    statColor: 'text-[#913b28]',
     title: 'Drop in Repeat Offenses',
     description:
       'Lowered the rate of recidivism by 3% in past 18 months, registering direct impact across the high-density repeaters ward.',
-    shadowColor: '#dec800',
+    shadowColor: '#deb04a',
     bgClass: 'bg-white',
   },
   {
     id: 'engaged',
     badge: 'REALISATION & ACTUALISATION',
     badgeBg: 'bg-[#111111]',
-    badgeText: 'text-[#ffe600]',
+    badgeText: 'text-[#deb04a]',
     stat: '1,800+',
     statColor: 'text-[#111111]',
     title: 'Inmates Engaged',
     description:
       'Taken through a structured life skills journey of recognizing the long-term impact of their actions on themselves and society.',
     shadowColor: '#ffffff',
-    bgClass: 'bg-[#ffe600]',
+    bgClass: 'bg-[#deb04a]',
   },
   {
     id: 'education',
     badge: 'FORMAL EDUCATION',
-    badgeBg: 'bg-[#0053db]',
+    badgeBg: 'bg-[#3f5670]',
     badgeText: 'text-white',
     stat: '250+',
-    statColor: 'text-[#0053db]',
+    statColor: 'text-[#3f5670]',
     title: 'Board & Degree Aspirants',
     description:
       '150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and appeared for IGNOU degree examinations.',
-    shadowColor: '#ff5722',
+    shadowColor: '#c05a3e',
     bgClass: 'bg-white',
   },
   {
@@ -325,34 +325,34 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     title: 'Employed Inside Prison',
     description:
       'Inmates formally employed part-time within the prison premises following graduation from our functional skill bootcamps.',
-    shadowColor: '#ffe600',
+    shadowColor: '#deb04a',
     bgClass: 'bg-white',
   },
   {
     id: 'peer-leaders',
     badge: 'PROGRAM SUSTAINABILITY',
-    badgeBg: 'bg-[#0053db]',
+    badgeBg: 'bg-[#3f5670]',
     badgeText: 'text-white',
     stat: '20+',
-    statColor: 'text-[#0053db]',
+    statColor: 'text-[#3f5670]',
     title: 'Trained Peer Leaders',
     description:
       'Self-sustaining model: created a core cadre of inmate leaders capable of running cohorts and life-skills workshops independently.',
     shadowColor: '#ffffff',
-    bgClass: 'bg-[#dbe1ff]',
+    bgClass: 'bg-[#e8edf3]',
   },
   {
     id: 'hours',
     badge: 'INTENSIVE FIELDWORK',
     badgeBg: 'bg-[#111111]',
-    badgeText: 'text-[#ff5722]',
+    badgeText: 'text-[#c05a3e]',
     stat: '2,500+',
     statColor: 'text-[#111111]',
     title: 'Hours Spent Inside',
     description:
       'Directly delivered classes and workshops by fellows, driving a 60% documented growth in language and arithmetic proficiency.',
-    shadowColor: '#ffe600',
-    bgClass: 'bg-[#ff5722]',
+    shadowColor: '#deb04a',
+    bgClass: 'bg-[#c05a3e]',
   },
 ];
 
@@ -414,15 +414,15 @@ export const RAND_STUDY_METRICS = [
     title: 'Correctional education improves 13% chances of inmates not returning to prison.',
     index: 'INDEX: NON-RECIDIVISM PROBABILITY',
     bg: 'bg-white',
-    statColor: 'text-[#b02f00]',
-    shadow: 'shadow-[5px_5px_0px_#ffe600]',
+    statColor: 'text-[#913b28]',
+    shadow: 'shadow-[5px_5px_0px_#deb04a]',
   },
   {
     stat: '$1 : $5',
     title:
       'Every dollar spent on prison education saves four to five dollars on the cost of reincarceration.',
     index: 'FISCAL COST BENEFIT MULTIPLIER',
-    bg: 'bg-[#ffe600]',
+    bg: 'bg-[#deb04a]',
     statColor: 'text-[#111111]',
     shadow: 'shadow-[5px_5px_0px_#ffffff]',
   },
@@ -432,7 +432,7 @@ export const RAND_STUDY_METRICS = [
       'Inmates who participate in correctional education programs had a 43 percent lower odds of committing crime.',
     index: 'CRIME REDUCTION PROBABILITY RATIO',
     bg: 'bg-white',
-    statColor: 'text-[#0053db]',
-    shadow: 'shadow-[5px_5px_0px_#ff5722]',
+    statColor: 'text-[#3f5670]',
+    shadow: 'shadow-[5px_5px_0px_#c05a3e]',
   },
 ];

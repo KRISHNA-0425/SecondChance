@@ -29,7 +29,7 @@ export const ContactSection: React.FC = () => {
         <AnimatedSection direction="up" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-[2.5px] border-[#111111] pb-4">
             <div>
-              <span className="bg-[#111111] text-[#ffe600] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+              <span className="bg-[#111111] text-[#deb04a] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
                 DISPATCH & FIELD DESK
               </span>
               <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-[#111111] tracking-tight font-bold">
@@ -55,7 +55,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4 font-['Inter'] text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-[#ffe600] border border-[#111111] shrink-0">
+                  <div className="p-2 bg-[#deb04a] border border-[#111111] shrink-0">
                     <MapPin className="w-4 h-4 text-[#111111]" />
                   </div>
                   <div>
@@ -70,8 +70,8 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-[#ffdbd1] border border-[#111111] shrink-0">
-                    <Phone className="w-4 h-4 text-[#b02f00]" />
+                  <div className="p-2 bg-[#f2e8e3] border border-[#111111] shrink-0">
+                    <Phone className="w-4 h-4 text-[#913b28]" />
                   </div>
                   <div>
                     <div className="font-mono text-xs uppercase font-bold text-[#4b4731]">
@@ -84,8 +84,8 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-[#dbe1ff] border border-[#111111] shrink-0">
-                    <Mail className="w-4 h-4 text-[#0053db]" />
+                  <div className="p-2 bg-[#e8edf3] border border-[#111111] shrink-0">
+                    <Mail className="w-4 h-4 text-[#3f5670]" />
                   </div>
                   <div>
                     <div className="font-mono text-xs uppercase font-bold text-[#4b4731]">
@@ -114,7 +114,7 @@ export const ContactSection: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="p-4 bg-[#ffe600] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111]"
+              className="p-4 bg-[#deb04a] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111]"
               whileHover={{ translateY: -2, boxShadow: '5px 5px 0px #111111' }}
             >
               <div className="font-mono text-xs uppercase font-extrabold text-[#111111]">
@@ -199,7 +199,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full bg-[#111111] text-[#ffe600] py-3.5 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] hover:bg-[#ffe600] hover:text-[#111111] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full bg-[#111111] text-[#deb04a] py-3.5 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] shadow-[3px_3px_0px_#111111] hover:bg-[#deb04a] hover:text-[#111111] transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     <span>Dispatch Communication to Desk</span>
@@ -208,7 +208,7 @@ export const ContactSection: React.FC = () => {
               </form>
             ) : (
               <div className="p-6 bg-[#f6f3f2] border-[2px] border-[#111111] text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#ffe600] border-[2px] border-[#111111] mx-auto flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#deb04a] border-[2px] border-[#111111] mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6 text-[#111111]" />
                 </div>
                 <h4 className="font-['Space_Grotesk'] text-xl font-bold uppercase text-[#111111]">
@@ -220,7 +220,7 @@ export const ContactSection: React.FC = () => {
                 </p>
                 <button
                   onClick={() => setIsDispatched(false)}
-                  className="mt-2 bg-white text-[#111111] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#ffe600] cursor-pointer"
+                  className="mt-2 bg-white text-[#111111] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#deb04a] cursor-pointer"
                 >
                   Send Another Inquiry
                 </button>

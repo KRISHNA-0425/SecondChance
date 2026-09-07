@@ -32,9 +32,9 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
       case 'GraduationCap':
         return <GraduationCap className="w-6 h-6 text-[#111111]" />;
       case 'PhoneCall':
-        return <PhoneCall className="w-6 h-6 text-[#b02f00]" />;
+        return <PhoneCall className="w-6 h-6 text-[#913b28]" />;
       case 'Library':
-        return <Library className="w-6 h-6 text-[#0053db]" />;
+        return <Library className="w-6 h-6 text-[#3f5670]" />;
       case 'LockKeyholeOpen':
         return <LockKeyholeOpen className="w-6 h-6 text-[#111111]" />;
       case 'Users':
@@ -48,10 +48,10 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-[#111111]/75 backdrop-blur-xs flex items-center justify-center p-4">
-      <div className="bg-white border-[3px] border-[#111111] max-w-3xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#ffe600] relative max-h-[92vh] overflow-y-auto">
+      <div className="bg-white border-[3px] border-[#111111] max-w-3xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#deb04a] relative max-h-[92vh] overflow-y-auto">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 bg-[#111111] text-white hover:bg-[#ff5722] transition-colors border-[2px] border-[#111111] cursor-pointer"
+          className="absolute top-4 right-4 p-1.5 bg-[#111111] text-white hover:bg-[#c05a3e] transition-colors border-[2px] border-[#111111] cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -60,11 +60,11 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
         <div className="space-y-6">
           {/* Header Banner */}
           <div className="flex items-start gap-4 border-b-[2.5px] border-[#111111] pb-4">
-            <div className="p-3 bg-[#ffe600] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] shrink-0">
+            <div className="p-3 bg-[#deb04a] border-[2.5px] border-[#111111] shadow-[3px_3px_0px_#111111] shrink-0">
               {renderIcon(project.iconName)}
             </div>
             <div>
-              <span className="font-mono text-xs uppercase font-extrabold bg-[#111111] text-[#ffe600] px-2 py-0.5 inline-block mb-1">
+              <span className="font-mono text-xs uppercase font-extrabold bg-[#111111] text-[#deb04a] px-2 py-0.5 inline-block mb-1">
                 {project.badge}
               </span>
               <h2 className="font-['Space_Grotesk'] text-2xl sm:text-3xl font-extrabold uppercase text-[#111111]">
@@ -93,7 +93,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                     key={idx}
                     className="p-3 bg-[#f6f3f2] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                   >
-                    <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#b02f00]">
+                    <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#913b28]">
                       {stat.value}
                     </div>
                     <div className="font-mono text-[11px] uppercase font-bold text-[#4b4731] mt-0.5">
@@ -117,7 +117,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                     key={idx}
                     className="p-2.5 bg-white border-[2px] border-[#111111] flex items-center gap-2.5"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-[#0053db] shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#3f5670] shrink-0" />
                     <span className="font-['Inter'] text-sm text-[#1c1b1b] font-medium">{item}</span>
                   </div>
                 ))}
@@ -127,7 +127,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
 
           {/* Partner Institution */}
           {project.partnerGovt && (
-            <div className="p-3 bg-[#ffe600] border-[2px] border-[#111111] flex items-center gap-2">
+            <div className="p-3 bg-[#deb04a] border-[2px] border-[#111111] flex items-center gap-2">
               <Building2 className="w-5 h-5 text-[#111111] shrink-0" />
               <div className="font-mono text-xs text-[#111111]">
                 <strong className="font-extrabold uppercase">Government/Judicial Partner: </strong>
@@ -144,7 +144,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                   onClose();
                   onNavigate('fellowship');
                 }}
-                className="flex-1 bg-[#ff5722] text-white py-3 px-4 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#ffe600] hover:text-[#111111] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 bg-[#c05a3e] text-white py-3 px-4 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#deb04a] hover:text-[#111111] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Complete Fellowship Application</span>
                 <ArrowRight className="w-4 h-4" />
@@ -155,7 +155,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                   onClose();
                   onNavigate('contact');
                 }}
-                className="flex-1 bg-[#ffe600] text-[#111111] py-3 px-4 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#ff5722] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 bg-[#deb04a] text-[#111111] py-3 px-4 font-mono text-xs uppercase font-extrabold border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#c05a3e] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Inquire About {project.title}</span>
                 <ArrowRight className="w-4 h-4" />

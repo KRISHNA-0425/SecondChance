@@ -21,6 +21,9 @@ export default function App() {
   const [viewMode, setViewMode] = useState<'all' | 'focused'>('all');
   const [showSplash, setShowSplash] = useState(() => {
     try {
+      if (new URLSearchParams(window.location.search).has('intro')) {
+        return true;
+      }
       return !sessionStorage.getItem('psc_intro_completed');
     } catch {
       return true;
@@ -103,7 +106,7 @@ export default function App() {
   }, [viewMode]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcf9f8] text-[#1c1b1b] selection:bg-[#ffe600] selection:text-[#111111] font-['Inter']">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f2] text-[#1c1b1b] selection:bg-[#deb04a] selection:text-[#111111] font-['Inter']">
       {/* Global Scroll Progress Bar */}
       <ScrollProgress />
 
@@ -117,11 +120,11 @@ export default function App() {
       <Header activeScreen={activeScreen} onNavigate={handleNavigate} />
 
       {/* Optional Mode Switcher Floating Pill */}
-      <div className="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-1 bg-[#111111] text-white p-1 border-[2px] border-white shadow-[4px_4px_0px_#ffe600]">
+      <div className="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-1 bg-[#111111] text-white p-1 border-[2px] border-white shadow-[4px_4px_0px_#deb04a]">
         <button
           onClick={() => setViewMode('all')}
           className={`px-3 py-1.5 font-mono text-[11px] uppercase font-bold flex items-center gap-1.5 transition-colors cursor-pointer ${
-            viewMode === 'all' ? 'bg-[#ffe600] text-[#111111]' : 'text-neutral-300 hover:text-white'
+            viewMode === 'all' ? 'bg-[#deb04a] text-[#111111]' : 'text-neutral-300 hover:text-white'
           }`}
           title="Browse continuous full report"
         >
@@ -132,7 +135,7 @@ export default function App() {
           onClick={() => setViewMode('focused')}
           className={`px-3 py-1.5 font-mono text-[11px] uppercase font-bold flex items-center gap-1.5 transition-colors cursor-pointer ${
             viewMode === 'focused'
-              ? 'bg-[#ff5722] text-white'
+              ? 'bg-[#c05a3e] text-white'
               : 'text-neutral-300 hover:text-white'
           }`}
           title="View one section at a time"
@@ -178,7 +181,7 @@ export default function App() {
         ) : (
           /* Focused Single Screen View with AnimatePresence Transitions */
           <div className="w-full">
-            <div className="bg-[#111111] text-[#ffe600] py-2 px-4 border-b border-black">
+            <div className="bg-[#111111] text-[#deb04a] py-2 px-4 border-b border-black">
               <div className="max-w-7xl mx-auto flex items-center justify-between font-mono text-xs uppercase font-bold">
                 <span>VIEWING SCREEN: {activeScreen.replace('-', ' ')}</span>
                 <button

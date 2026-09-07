@@ -48,7 +48,7 @@ export const ScrollProgress: React.FC = () => {
         className="h-full origin-left"
         style={{
           transform: 'scaleX(0)',
-          background: 'linear-gradient(90deg, #ffe600 0%, #ff5722 50%, #b02f00 100%)',
+          background: 'linear-gradient(90deg, #deb04a 0%, #c05a3e 50%, #913b28 100%)',
         }}
       />
     </div>

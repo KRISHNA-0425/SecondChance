@@ -60,22 +60,22 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
   const impactCards = [
     {
       tag: 'RECIDIVISM RATE',
-      tagBg: 'bg-[#ff5722]',
+      tagBg: 'bg-[#c05a3e]',
       tagText: 'text-white',
       stat: '-3%',
-      statColor: 'text-[#b02f00]',
+      statColor: 'text-[#913b28]',
       counterTarget: 3,
       counterPrefix: '-',
       counterSuffix: '%',
       title: 'Drop in Repeat Offenses',
       description: 'Lowered the rate of recidivism by 3% in past 18 months, registering direct impact across the high-density repeaters ward.',
       bg: 'bg-white text-[#111111]',
-      shadow: 'shadow-[6px_6px_0px_#dec800]',
+      shadow: 'shadow-[6px_6px_0px_#deb04a]',
     },
     {
       tag: 'REALISATION & ACTUALISATION',
       tagBg: 'bg-[#111111]',
-      tagText: 'text-[#ffe600]',
+      tagText: 'text-[#deb04a]',
       stat: '1,800+',
       statColor: 'text-[#111111]',
       counterTarget: 1800,
@@ -83,22 +83,22 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       counterSuffix: '+',
       title: 'Inmates Engaged',
       description: 'Taken through a structured life skills journey of recognizing the long-term impact of their actions on themselves and society.',
-      bg: 'bg-[#ffe600] text-[#111111]',
+      bg: 'bg-[#deb04a] text-[#111111]',
       shadow: 'shadow-[6px_6px_0px_#ffffff]',
     },
     {
       tag: 'FORMAL EDUCATION',
-      tagBg: 'bg-[#0053db]',
+      tagBg: 'bg-[#3f5670]',
       tagText: 'text-white',
       stat: '250+',
-      statColor: 'text-[#0053db]',
+      statColor: 'text-[#3f5670]',
       counterTarget: 250,
       counterPrefix: '',
       counterSuffix: '+',
       title: 'Board & Degree Aspirants',
       description: '150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and appeared for IGNOU degree examinations.',
       bg: 'bg-white text-[#111111]',
-      shadow: 'shadow-[6px_6px_0px_#ff5722]',
+      shadow: 'shadow-[6px_6px_0px_#c05a3e]',
     },
     {
       tag: 'INTERNAL VOCATION',
@@ -112,26 +112,26 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       title: 'Employed Inside Prison',
       description: 'Inmates formally employed part-time within the prison premises following graduation from our functional skill bootcamps.',
       bg: 'bg-white text-[#111111]',
-      shadow: 'shadow-[6px_6px_0px_#ffe600]',
+      shadow: 'shadow-[6px_6px_0px_#deb04a]',
     },
     {
       tag: 'PROGRAM SUSTAINABILITY',
-      tagBg: 'bg-[#0053db]',
+      tagBg: 'bg-[#3f5670]',
       tagText: 'text-white',
       stat: '20+',
-      statColor: 'text-[#0053db]',
+      statColor: 'text-[#3f5670]',
       counterTarget: 20,
       counterPrefix: '',
       counterSuffix: '+',
       title: 'Trained Peer Leaders',
       description: 'Self-sustaining model: created a core cadre of inmate leaders capable of running cohorts and life-skills workshops independently.',
-      bg: 'bg-[#dbe1ff] text-[#111111]',
+      bg: 'bg-[#e8edf3] text-[#111111]',
       shadow: 'shadow-[6px_6px_0px_#ffffff]',
     },
     {
       tag: 'INTENSIVE FIELDWORK',
       tagBg: 'bg-[#111111]',
-      tagText: 'text-[#ff5722]',
+      tagText: 'text-[#c05a3e]',
       stat: '2,500+',
       statColor: 'text-[#111111]',
       counterTarget: 2500,
@@ -139,8 +139,8 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       counterSuffix: '+',
       title: 'Hours Spent Inside',
       description: 'Directly delivered classes and workshops by fellows, driving a 60% documented growth in language and arithmetic proficiency.',
-      bg: 'bg-[#ff5722] text-[#111111]',
-      shadow: 'shadow-[6px_6px_0px_#ffe600]',
+      bg: 'bg-[#c05a3e] text-white',
+      shadow: 'shadow-[6px_6px_0px_#deb04a]',
     },
   ];
 
@@ -154,7 +154,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
         <AnimatedSection direction="up" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/20 pb-4">
             <div>
-              <span className="bg-[#ffe600] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
+              <span className="bg-[#deb04a] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-extrabold inline-block mb-2">
                 MEASURABLE TRANSFORMATION
               </span>
               <h2 className="font-['Space_Grotesk'] text-3xl sm:text-5xl uppercase text-white tracking-tight font-bold">
@@ -166,7 +166,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
                 onClick={() => setActiveTab('metrics')}
                 className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
                   activeTab === 'metrics'
-                    ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
+                    ? 'bg-[#deb04a] text-[#111111] border-[#deb04a]'
                     : 'bg-transparent text-white border-white/40 hover:border-white'
                 }`}
                 whileHover={{ scale: 1.03 }}
@@ -178,7 +178,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
                 onClick={() => setActiveTab('timeline')}
                 className={`px-3 py-1.5 font-mono text-xs uppercase font-bold border-[2px] transition-colors cursor-pointer ${
                   activeTab === 'timeline'
-                    ? 'bg-[#ffe600] text-[#111111] border-[#ffe600]'
+                    ? 'bg-[#deb04a] text-[#111111] border-[#deb04a]'
                     : 'bg-transparent text-white border-white/40 hover:border-white'
                 }`}
                 whileHover={{ scale: 1.03 }}
@@ -247,15 +247,15 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
                 {milestones.map((m, idx) => (
                   <StaggerItem key={idx} direction="left">
                     <motion.div
-                      className="p-5 bg-white text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#ffe600] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                      className="p-5 bg-white text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#deb04a] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                       whileHover={{
                         translateX: 4,
-                        boxShadow: '6px 6px 0px #ffe600',
+                        boxShadow: '6px 6px 0px #deb04a',
                         transition: { type: 'spring', stiffness: 300 },
                       }}
                     >
                       <div className="space-y-1">
-                        <span className="font-mono text-xs font-bold uppercase bg-[#ff5722] text-white px-2 py-0.5">
+                        <span className="font-mono text-xs font-bold uppercase bg-[#c05a3e] text-white px-2 py-0.5">
                           {m.quarter}
                         </span>
                         <h4 className="font-['Space_Grotesk'] text-xl font-bold uppercase text-[#111111] mt-1">
@@ -265,8 +265,8 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
                           {m.description}
                         </p>
                       </div>
-                      <div className="shrink-0 flex items-center gap-2 font-mono text-xs font-bold text-[#0053db] uppercase">
-                        <CheckCircle className="w-4 h-4 text-[#0053db]" /> Verified Audit
+                      <div className="shrink-0 flex items-center gap-2 font-mono text-xs font-bold text-[#3f5670] uppercase">
+                        <CheckCircle className="w-4 h-4 text-[#3f5670]" /> Verified Audit
                       </div>
                     </motion.div>
                   </StaggerItem>
@@ -279,7 +279,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
         {/* CTA Bar */}
         <AnimatedSection direction="up" delay={0.2} duration={0.6}>
           <motion.div
-            className="p-6 bg-[#ffe600] text-[#111111] border-[3px] border-white shadow-[6px_6px_0px_#ffffff] flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="p-6 bg-[#deb04a] text-[#111111] border-[3px] border-white shadow-[6px_6px_0px_#ffffff] flex flex-col sm:flex-row items-center justify-between gap-4"
             whileHover={{
               boxShadow: '8px 8px 0px #ffffff',
               transition: { type: 'spring', stiffness: 200 },
@@ -295,7 +295,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
             </div>
             <motion.button
               onClick={() => onNavigate('fellowship')}
-              className="bg-[#111111] text-white py-3 px-6 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] hover:bg-[#ff5722] hover:text-[#111111] transition-colors flex items-center gap-2 shrink-0 cursor-pointer shadow-[3px_3px_0px_#111111]"
+              className="bg-[#111111] text-white py-3 px-6 font-mono text-xs uppercase font-extrabold border-[2px] border-[#111111] hover:bg-[#c05a3e] hover:text-white transition-colors flex items-center gap-2 shrink-0 cursor-pointer shadow-[3px_3px_0px_#111111]"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
