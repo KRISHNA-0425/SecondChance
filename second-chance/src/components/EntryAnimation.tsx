@@ -24,6 +24,8 @@ export const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) =>
   const [isExiting, setIsExiting] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const activeNodeRef = useRef<HTMLDivElement>(null);
+  const mobileTimelineRef = useRef<HTMLDivElement>(null);
+  const mobileActiveNodeRef = useRef<HTMLDivElement>(null);
 
   // Total animation duration in ms (approx 3.8s)
   const TOTAL_DURATION = 3800;
@@ -63,11 +65,27 @@ export const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) =>
 
   const currentPoint = TIMELINE_POINTS[activeIndex] || TIMELINE_POINTS[0];
 
-  // Auto-scroll timeline container to keep active node centered across all screen widths
+  // Auto-scroll desktop timeline container to keep active node centered
   useEffect(() => {
     if (activeNodeRef.current && timelineRef.current) {
       const container = timelineRef.current;
       const node = activeNodeRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const nodeRect = node.getBoundingClientRect();
+      const targetLeft =
+        container.scrollLeft +
+        (nodeRect.left - containerRect.left) -
+        container.clientWidth / 2 +
+        nodeRect.width / 2;
+      container.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+    }
+  }, [activeIndex]);
+
+  // Auto-scroll mobile timeline container to keep active node centered
+  useEffect(() => {
+    if (mobileActiveNodeRef.current && mobileTimelineRef.current) {
+      const container = mobileTimelineRef.current;
+      const node = mobileActiveNodeRef.current;
       const containerRect = container.getBoundingClientRect();
       const nodeRect = node.getBoundingClientRect();
       const targetLeft =
@@ -99,64 +117,64 @@ export const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) =>
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:3rem_3rem] sm:bg-[size:4rem_4rem] pointer-events-none" />
 
       {/* Top Bar with Ticker & Skip Action */}
-      <div className="relative z-20 w-full shrink-0 border-b-[2px] border-white/20 bg-[#161616]/95 px-3 sm:px-6 md:px-8 py-2 sm:py-3 flex items-center justify-between gap-2">
+      <div className="relative z-20 w-full shrink-0 border-b-[2px] border-white/20 bg-[#161616]/95 px-4 sm:px-6 md:px-8 py-2 sm:py-3 flex items-center justify-between gap-2">
         <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-xs tracking-wider text-[#deb04a] min-w-0">
           <span className="inline-block w-2 h-2 rounded-full bg-[#deb04a] animate-ping shrink-0" />
           <span className="font-bold uppercase truncate sm:inline hidden">
             SYSTEM INITIALIZATION // REHABILITATION MATRIX
           </span>
           <span className="font-bold uppercase truncate sm:hidden inline">
-            PSC // INITIALIZATION MATRIX
+            PSC // INIT
           </span>
         </div>
         <button
           onClick={handleSkip}
           className="shrink-0 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-[#deb04a] text-white hover:text-[#111111] border border-white/40 px-2.5 sm:px-3 py-1 sm:py-1.5 flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer shadow-[2px_2px_0px_#ffffff] active:translate-y-0.5"
         >
-          <span>Skip Intro</span>
+          <span>Skip</span>
           <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
         </button>
       </div>
 
       {/* Center Stage: Logo Pop-Up & Active Point Callout */}
-      <div className="relative z-10 flex-1 min-h-0 overflow-y-auto px-3 sm:px-4 py-2 sm:py-6 flex flex-col items-center justify-center max-w-4xl mx-auto w-full text-center">
+      <div className="relative z-10 flex-1 min-h-0 overflow-y-auto px-4 sm:px-4 py-2 sm:py-6 flex flex-col items-center justify-center max-w-4xl mx-auto w-full text-center">
         {/* Logo Pop-Up Badge */}
         <div className="animate-in fade-in zoom-in-75 duration-700 ease-out flex flex-col items-center w-full">
-          <div className="relative group p-2 xs:p-3 sm:p-4 md:p-5 bg-[#ECE0C6] border-[2.5px] sm:border-[3px] border-[#111111] shadow-[4px_4px_0px_#deb04a] sm:shadow-[6px_6px_0px_#deb04a] mb-2 sm:mb-4 transform transition-transform">
+          <div className="relative group p-2 sm:p-4 md:p-5 bg-[#ECE0C6] border-[2.5px] sm:border-[3px] border-[#111111] shadow-[4px_4px_0px_#deb04a] sm:shadow-[6px_6px_0px_#deb04a] mb-2 sm:mb-4 transform transition-transform">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkE2CBWerlIjG5Q5ilsnekCfFMde6WM1hw4ZRCIWFxA&s=10"
               alt="Project Second Chance"
-              className="w-12 h-12 xs:w-14 xs:h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-sm"
+              className="w-10 h-10 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-sm"
             />
-            <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-[#c05a3e] text-white font-mono text-[9px] sm:text-xs font-black uppercase px-1.5 sm:px-2 py-0.5 border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+            <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-[#c05a3e] text-white font-mono text-[8px] sm:text-xs font-black uppercase px-1 sm:px-2 py-0.5 border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
               TYCIA
             </div>
           </div>
 
-          <div className="space-y-1 w-full px-2">
-            <h1 className="font-['Space_Grotesk'] text-lg xs:text-2xl sm:text-3xl md:text-5xl uppercase font-extrabold tracking-tight text-white flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+          <div className="space-y-1 w-full px-1">
+            <h1 className="font-['Space_Grotesk'] text-base sm:text-3xl md:text-5xl uppercase font-extrabold tracking-tight text-white flex flex-wrap items-center justify-center gap-1 sm:gap-2">
               <span>PROJECT</span>
               <span className="bg-[#deb04a] text-[#111111] px-1.5 sm:px-2 py-0.5 border border-white">
                 SECOND CHANCE
               </span>
             </h1>
-            <p className="font-mono text-[9px] xs:text-[10px] sm:text-xs md:text-sm uppercase tracking-wider sm:tracking-widest text-neutral-400 font-bold max-w-sm sm:max-w-md mx-auto">
+            <p className="font-mono text-[8px] sm:text-xs md:text-sm uppercase tracking-wider sm:tracking-widest text-neutral-400 font-bold max-w-[280px] sm:max-w-md mx-auto leading-relaxed">
               Turn Your Concern Into Action (TYCIA) Foundation
             </p>
           </div>
         </div>
 
         {/* Current Active Milestone Callout */}
-        <div className="mt-2.5 sm:mt-5 md:mt-7 w-full max-w-xs sm:max-w-md md:max-w-lg px-2">
-          <div className="bg-[#1a1a1a] border-[2px] border-[#deb04a] p-2.5 sm:p-3.5 md:p-4 shadow-[3px_3px_0px_#ffffff] sm:shadow-[4px_4px_0px_#ffffff] flex flex-col items-center gap-1">
-            <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-xs uppercase text-[#deb04a] font-bold">
+        <div className="mt-2 sm:mt-5 md:mt-7 w-full max-w-[260px] sm:max-w-md md:max-w-lg px-1">
+          <div className="bg-[#1a1a1a] border-[2px] border-[#deb04a] p-2 sm:p-3.5 md:p-4 shadow-[3px_3px_0px_#ffffff] sm:shadow-[4px_4px_0px_#ffffff] flex flex-col items-center gap-0.5 sm:gap-1">
+            <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[8px] sm:text-xs uppercase text-[#deb04a] font-bold">
               <span className="w-1.5 h-1.5 bg-[#deb04a] rounded-full animate-pulse" />
               <span>STAGE {activeIndex + 1} OF {TIMELINE_POINTS.length}</span>
             </div>
-            <div className="font-['Space_Grotesk'] text-base xs:text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-wide max-w-full px-1">
+            <div className="font-['Space_Grotesk'] text-sm sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-wide max-w-full px-1">
               {currentPoint?.label ?? ''}
             </div>
-            <div className="font-mono text-[10px] sm:text-xs text-neutral-300 max-w-full px-1 leading-snug">
+            <div className="font-mono text-[9px] sm:text-xs text-neutral-300 max-w-full px-1 leading-snug">
               {currentPoint?.detail ?? ''}
             </div>
           </div>
@@ -164,66 +182,76 @@ export const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) =>
       </div>
 
       {/* Bottom Stage: Moving Timeline Animation */}
-      <div className="relative z-20 w-full shrink-0 bg-[#161616] border-t-[2px] border-white/20 p-2.5 sm:p-5 md:p-6">
-        <div className="max-w-6xl mx-auto space-y-2 sm:space-y-4">
+      <div className="relative z-20 w-full shrink-0 bg-[#161616] border-t-[2px] border-white/20 px-3 py-2 sm:p-5 md:p-6">
+        <div className="max-w-6xl mx-auto space-y-1.5 sm:space-y-4">
           {/* Progress Percent Bar */}
-          <div className="flex items-center justify-between font-mono text-[10px] sm:text-xs text-neutral-400">
-            <span className="text-[#deb04a] font-bold">
-              TIMELINE TRAJECTORY: {progress >= 100 ? 'INITIALIZED' : 'PROCESSING'}
+          <div className="flex items-center justify-between font-mono text-[9px] sm:text-xs text-neutral-400">
+            <span className="text-[#deb04a] font-bold truncate mr-2">
+              {progress >= 100 ? 'INITIALIZED' : 'PROCESSING'}
             </span>
-            <span className="font-bold text-white">{Math.round(progress)}%</span>
+            <span className="font-bold text-white shrink-0">{Math.round(progress)}%</span>
           </div>
 
-          <div className="w-full bg-white/10 h-1.5 sm:h-2 border border-white/30 overflow-hidden relative">
+          <div className="w-full bg-white/10 h-1 sm:h-2 border border-white/30 overflow-hidden relative">
             <div
               className="h-full bg-[#deb04a] transition-all duration-100 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
 
-          {/* MOBILE VIEW (< sm): Sleek, 100% full-width connected 11-node timeline */}
+          {/* MOBILE VIEW (< sm): Scrollable compact timeline with auto-centering */}
           <div className="block sm:hidden w-full pt-1 pb-0.5">
-            <div className="relative flex items-center justify-between w-full px-0.5">
-              {/* Connecting Line Track */}
-              <div className="absolute left-2 right-2 top-1/2 -translate-y-1/2 h-[2px] bg-white/20 z-0">
-                <div
-                  className="h-full bg-[#deb04a] transition-all duration-100 ease-out"
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-
-              {/* 11 Step Nodes (No overflow, fits any phone screen perfectly) */}
-              {TIMELINE_POINTS.map((pt, idx) => {
-                const isPast = idx < activeIndex;
-                const isCurrent = idx === activeIndex;
-
-                return (
+            <div
+              ref={mobileTimelineRef}
+              className="overflow-x-auto scroll-smooth w-full"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <style>{`.mobile-timeline-scroll::-webkit-scrollbar { display: none; }`}</style>
+              <div className="mobile-timeline-scroll relative flex items-center w-max min-w-full px-2 py-0.5">
+                {/* Connecting Line Track */}
+                <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-[2px] bg-white/20 z-0">
                   <div
-                    key={pt.id}
-                    className={`relative z-10 flex items-center justify-center font-mono text-[9px] font-black transition-all duration-200 ${
-                      isCurrent
-                        ? 'w-6 h-6 bg-[#deb04a] text-[#111111] border-[2px] border-white shadow-[2px_2px_0px_#ffffff] scale-110'
-                        : isPast
-                        ? 'w-5 h-5 bg-white text-[#111111] border border-white'
-                        : 'w-5 h-5 bg-[#222222] text-neutral-400 border border-white/20'
-                    }`}
-                  >
-                    {isPast ? (
-                      <Check className="w-3 h-3 text-[#111111] stroke-[3.5]" />
-                    ) : (
-                      <span>{idx + 1}</span>
-                    )}
-                  </div>
-                );
-              })}
+                    className="h-full bg-[#deb04a] transition-all duration-100 ease-out"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+
+                {/* Step Nodes with proper spacing */}
+                <div className="relative z-10 flex items-center gap-[6px] mx-auto">
+                  {TIMELINE_POINTS.map((pt, idx) => {
+                    const isPast = idx < activeIndex;
+                    const isCurrent = idx === activeIndex;
+
+                    return (
+                      <div
+                        key={pt.id}
+                        ref={isCurrent ? mobileActiveNodeRef : null}
+                        className={`shrink-0 flex items-center justify-center font-mono font-black transition-all duration-200 ${
+                          isCurrent
+                            ? 'w-7 h-7 text-[9px] bg-[#deb04a] text-[#111111] border-[2px] border-white shadow-[1px_1px_0px_#ffffff] scale-110'
+                            : isPast
+                            ? 'w-5 h-5 text-[8px] bg-white text-[#111111] border border-white'
+                            : 'w-5 h-5 text-[8px] bg-[#222222] text-neutral-500 border border-white/20'
+                        }`}
+                      >
+                        {isPast ? (
+                          <Check className="w-2.5 h-2.5 text-[#111111] stroke-[3.5]" />
+                        ) : (
+                          <span>{idx + 1}</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
             {/* Mobile Active Stage Callout Bar */}
-            <div className="flex items-center justify-between font-mono text-[10px] text-neutral-400 uppercase mt-2 pt-1 border-t border-white/10">
-              <span className="text-[#deb04a] font-bold truncate max-w-[45%]">
-                [{activeIndex + 1}/11] {currentPoint?.label}
+            <div className="flex items-center justify-between font-mono text-[9px] text-neutral-400 uppercase mt-1.5 pt-1 border-t border-white/10 px-0.5">
+              <span className="text-[#deb04a] font-bold truncate max-w-[40%]">
+                [{activeIndex + 1}/{TIMELINE_POINTS.length}] {currentPoint?.label}
               </span>
-              <span className="text-neutral-300 truncate max-w-[52%] text-right font-medium">
+              <span className="text-neutral-300 truncate max-w-[55%] text-right font-medium">
                 {currentPoint?.detail}
               </span>
             </div>

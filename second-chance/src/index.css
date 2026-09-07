@@ -137,7 +137,20 @@ html.dark .bg-white:not([data-keep-light="true"]) {
   background-color: #1e2025 !important;
 }
 
-/* Text colors */
+/* Additional light backgrounds that need darkening */
+html.dark .bg-\[\#e8edf3\] {
+  background-color: #1a1d24 !important;
+}
+
+html.dark .bg-\[\#f2e8e3\] {
+  background-color: #1c1a18 !important;
+}
+
+html.dark .bg-\[\#e5e2e1\] {
+  background-color: #1a1918 !important;
+}
+
+/* ---- Text Colors ---- */
 html.dark .text-\[\#111111\]:not([data-keep-dark="true"]),
 html.dark .text-\[\#1c1b1b\] {
   color: #f0ede8 !important;
@@ -145,6 +158,15 @@ html.dark .text-\[\#1c1b1b\] {
 
 html.dark .text-\[\#4b4731\] {
   color: #b8b3a0 !important;
+}
+
+/* Dark red and dark blue text — brighten for readability */
+html.dark .text-\[\#913b28\] {
+  color: #e07460 !important;
+}
+
+html.dark .text-\[\#3f5670\] {
+  color: #7fa8cc !important;
 }
 
 html.dark .text-neutral-700 {
@@ -159,9 +181,13 @@ html.dark .text-neutral-500 {
   color: #98948d !important;
 }
 
-/* High contrast neo-brutalist borders */
+/* ---- Borders ---- */
 html.dark .border-\[\#111111\] {
   border-color: #383b42 !important;
+}
+
+html.dark .border-\[\#913b28\] {
+  border-color: #e07460 !important;
 }
 
 html.dark .brutal-border {
@@ -178,7 +204,7 @@ html.dark header {
   border-bottom-color: #2e3037 !important;
 }
 
-/* Dark Mode Shadows (Muted Gold & Soft Dark Brutalist) */
+/* ---- Shadows ---- */
 html.dark .shadow-\[1px_1px_0px_\#111111\],
 html.dark .brutal-shadow-sm {
   box-shadow: 1px 1px 0px #deb04a !important;
@@ -206,18 +232,61 @@ html.dark .brutal-shadow-xl {
   box-shadow: 5px 5px 0px #deb04a !important;
 }
 
-/* Preserve badge text contrast */
-html.dark .bg-\[\#deb04a\],
-html.dark .bg-\[\#deb04a\] * {
+/* ---- Accent Background Badge Contrast ---- */
+/* Gold backgrounds: text and direct descendants should stay dark for contrast.
+   Use specificity-friendly selectors that don't leak into nested badge elements
+   (e.g. a bg-[#111111] tag badge inside a gold card). */
+html.dark .bg-\[\#deb04a\] {
+  color: #111111 !important;
+}
+html.dark .bg-\[\#deb04a\] > *:not([class*="bg-"]) {
   color: #111111 !important;
 }
 
-html.dark .bg-\[\#c05a3e\],
-html.dark .bg-\[\#c05a3e\] * {
+/* Coral/red backgrounds: text should stay white for contrast */
+html.dark .bg-\[\#c05a3e\] {
+  color: #ffffff !important;
+}
+html.dark .bg-\[\#c05a3e\] > *:not([class*="bg-"]) {
   color: #ffffff !important;
 }
 
-/* Form elements */
+/* Dark blue badge backgrounds: text should stay white */
+html.dark .bg-\[\#3f5670\] {
+  color: #ffffff !important;
+}
+html.dark .bg-\[\#3f5670\] > *:not([class*="bg-"]) {
+  color: #ffffff !important;
+}
+
+/* ---- Icon Colors in Dark Mode ---- */
+/* Brighten dark-colored icons for visibility */
+html.dark .text-\[\#3f5670\].w-5,
+html.dark .text-\[\#3f5670\].w-6,
+html.dark .text-\[\#3f5670\].w-4 {
+  color: #7fa8cc !important;
+}
+
+html.dark .text-\[\#913b28\].w-4,
+html.dark .text-\[\#913b28\].w-5 {
+  color: #e07460 !important;
+}
+
+/* Lucide icons that use inline text color classes */
+html.dark svg.text-\[\#3f5670\] {
+  color: #7fa8cc !important;
+}
+
+html.dark svg.text-\[\#913b28\] {
+  color: #e07460 !important;
+}
+
+/* ---- Underline/Decoration Colors ---- */
+html.dark .decoration-\[\#913b28\] {
+  text-decoration-color: #e07460 !important;
+}
+
+/* ---- Form Elements ---- */
 html.dark input,
 html.dark select,
 html.dark textarea {
@@ -233,7 +302,12 @@ html.dark textarea:focus {
   background-color: #1f2126 !important;
 }
 
-/* Modals and floating elements */
+/* Range input styling */
+html.dark input[type="range"] {
+  background-color: #2a2c32 !important;
+}
+
+/* ---- Modals and Floating Elements ---- */
 html.dark [role="dialog"] {
   background-color: #15161a !important;
 }
