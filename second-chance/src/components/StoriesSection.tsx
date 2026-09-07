@@ -16,7 +16,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
 
   return (
     <section
-      className="w-full bg-[#fcf9f8] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
+      className="w-full bg-[#ECE0C6] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
       id={id}
     >
       <div className="max-w-7xl mx-auto space-y-10">
@@ -93,7 +93,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                     className={`w-full text-left p-4 border-[2.5px] border-[#111111] transition-all cursor-pointer flex items-center justify-between ${
                       isSelected
                         ? 'bg-[#111111] text-white shadow-[4px_4px_0px_#deb04a] translate-x-1'
-                        : 'bg-white text-[#111111] hover:bg-[#f6f3f2] shadow-[3px_3px_0px_#111111]'
+                        : 'bg-[#ECE0C6] text-[#111111] hover:bg-[#dfd2b5] shadow-[3px_3px_0px_#111111]'
                     }`}
                     whileHover={
                       !isSelected
@@ -114,7 +114,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                         </span>
                         <span
                           className={`font-mono text-xs px-1.5 py-0.2 ${
-                            isSelected ? 'bg-[#deb04a] text-[#111111]' : 'bg-[#e5e2e1] text-[#111111]'
+                            isSelected ? 'bg-[#deb04a] text-[#111111]' : 'bg-[#dfd2b5] text-[#111111]'
                           } font-bold`}
                         >
                           Age {story.age}
@@ -148,7 +148,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                className="bg-white border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111] space-y-6"
+                className="bg-[#ECE0C6] border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111] space-y-6"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b-[2px] border-[#111111] pb-4">
                   <div>
@@ -165,7 +165,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                 </div>
 
                 <motion.div
-                  className="p-4 bg-[#f6f3f2] border-l-4 border-[#913b28] italic font-['Inter'] text-base text-[#1c1b1b]"
+                  className="p-4 bg-[#dfd2b5] border-l-4 border-[#913b28] italic font-['Inter'] text-base text-[#1c1b1b]"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
@@ -222,7 +222,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({ id = 'stories' }
                           transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-3 p-4 bg-[#fbf8f0] border-[2px] border-[#111111] font-mono text-sm text-[#111111] shadow-[2px_2px_0px_#111111]">
+                          <div className="mt-3 p-4 bg-[#dfd2b5] border-[2px] border-[#111111] font-mono text-sm text-[#111111] shadow-[2px_2px_0px_#111111]">
                             <div className="text-xs uppercase font-bold text-[#913b28] mb-1">
                               ORIGINAL DISPATCH TRANSLATION:
                             </div>

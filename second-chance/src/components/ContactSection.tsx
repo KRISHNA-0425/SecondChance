@@ -23,7 +23,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#f6f3f2] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="contact">
+    <section className="w-full bg-[#ECE0C6] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="contact">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Header */}
         <AnimatedSection direction="up" duration={0.6}>
@@ -46,7 +46,7 @@ export const ContactSection: React.FC = () => {
           {/* Coordinates Information Column */}
           <AnimatedSection className="lg:col-span-5 space-y-4" direction="left" delay={0.1} duration={0.7}>
             <motion.div
-              className="bg-white border-[2.5px] border-[#111111] p-6 shadow-[5px_5px_0px_#111111] space-y-4"
+              className="bg-[#ECE0C6] border-[2.5px] border-[#111111] p-6 shadow-[5px_5px_0px_#111111] space-y-4"
               whileHover={{ boxShadow: '7px 7px 0px #111111', transition: { type: 'spring', stiffness: 200 } }}
             >
               <h3 className="font-['Space_Grotesk'] text-xl uppercase font-bold text-[#111111] border-b-[2px] border-[#111111] pb-2">
@@ -129,7 +129,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Interactive Dispatch Form Column */}
           <AnimatedSection className="lg:col-span-7" direction="right" delay={0.2} duration={0.7}>
-          <div className="bg-white border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111]">
+          <div className="bg-[#ECE0C6] border-[3px] border-[#111111] p-6 sm:p-8 shadow-[6px_6px_0px_#111111]">
             <h3 className="font-['Space_Grotesk'] text-2xl uppercase font-bold text-[#111111] border-b-[2px] border-[#111111] pb-3 mb-6">
               TRANSMIT OFFICIAL INQUIRY
             </h3>
@@ -147,7 +147,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Dr. Rajesh Verma"
-                      className="w-full p-3 bg-[#fcf9f8] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-white"
+                      className="w-full p-3 bg-[#dfd2b5] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-[#ECE0C6]"
                     />
                   </div>
                   <div>
@@ -160,7 +160,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="rajesh@university.edu"
-                      className="w-full p-3 bg-[#fcf9f8] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-white"
+                      className="w-full p-3 bg-[#dfd2b5] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-[#ECE0C6]"
                     />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export const ContactSection: React.FC = () => {
                   <select
                     value={formData.topic}
                     onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                    className="w-full p-3 bg-[#fcf9f8] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none cursor-pointer"
+                    className="w-full p-3 bg-[#dfd2b5] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none cursor-pointer"
                   >
                     <option>Academic Research & Criminological Collaboration</option>
                     <option>CSR Partnership & Program Funding</option>
@@ -192,7 +192,7 @@ export const ContactSection: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide context, institutional affiliation, and requested outcomes..."
-                    className="w-full p-3 bg-[#fcf9f8] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-white"
+                    className="w-full p-3 bg-[#dfd2b5] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none focus:bg-[#ECE0C6]"
                   ></textarea>
                 </div>
 
@@ -207,7 +207,7 @@ export const ContactSection: React.FC = () => {
                 </div>
               </form>
             ) : (
-              <div className="p-6 bg-[#f6f3f2] border-[2px] border-[#111111] text-center space-y-3">
+              <div className="p-6 bg-[#dfd2b5] border-[2px] border-[#111111] text-center space-y-3">
                 <div className="w-12 h-12 rounded-full bg-[#deb04a] border-[2px] border-[#111111] mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6 text-[#111111]" />
                 </div>
@@ -220,7 +220,7 @@ export const ContactSection: React.FC = () => {
                 </p>
                 <button
                   onClick={() => setIsDispatched(false)}
-                  className="mt-2 bg-white text-[#111111] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#deb04a] cursor-pointer"
+                  className="mt-2 bg-[#ECE0C6] text-[#111111] px-4 py-2 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#deb04a] cursor-pointer"
                 >
                   Send Another Inquiry
                 </button>

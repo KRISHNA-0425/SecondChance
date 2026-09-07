@@ -106,7 +106,7 @@ export default function App() {
   }, [viewMode]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f6f2] text-[#1c1b1b] selection:bg-[#deb04a] selection:text-[#111111] font-['Inter']">
+    <div className="min-h-screen flex flex-col bg-[#ECE0C6] text-[#1c1b1b] selection:bg-[#deb04a] selection:text-[#111111] font-['Inter']">
       {/* Global Scroll Progress Bar */}
       <ScrollProgress />
 

@@ -122,7 +122,7 @@ export const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) =>
       <div className="relative z-10 flex-1 min-h-0 overflow-y-auto px-3 sm:px-4 py-2 sm:py-6 flex flex-col items-center justify-center max-w-4xl mx-auto w-full text-center">
         {/* Logo Pop-Up Badge */}
         <div className="animate-in fade-in zoom-in-75 duration-700 ease-out flex flex-col items-center w-full">
-          <div className="relative group p-2 xs:p-3 sm:p-4 md:p-5 bg-white border-[2.5px] sm:border-[3px] border-[#111111] shadow-[4px_4px_0px_#deb04a] sm:shadow-[6px_6px_0px_#deb04a] mb-2 sm:mb-4 transform transition-transform">
+          <div className="relative group p-2 xs:p-3 sm:p-4 md:p-5 bg-[#ECE0C6] border-[2.5px] sm:border-[3px] border-[#111111] shadow-[4px_4px_0px_#deb04a] sm:shadow-[6px_6px_0px_#deb04a] mb-2 sm:mb-4 transform transition-transform">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkE2CBWerlIjG5Q5ilsnekCfFMde6WM1hw4ZRCIWFxA&s=10"
               alt="Project Second Chance"

@@ -6,7 +6,7 @@
   html, body {
     font-family: 'Inter', sans-serif;
     color: #1c1b1b;
-    background-color: #f8f6f2;
+    background-color: #ECE0C6;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
@@ -14,6 +14,34 @@
     color: #f0ede8;
     background-color: #121316;
   }
+}
+
+/* =========================================================
+   LIGHT MODE PALETTE (#ECE0C6 REPLACES WHITE)
+   ========================================================= */
+
+html:not(.dark) {
+  background-color: #ECE0C6;
+}
+
+html:not(.dark) .bg-white:not([data-keep-pure-white="true"]),
+html:not(.dark) .bg-\[\#ffffff\],
+html:not(.dark) .bg-\[\#f8f6f2\],
+html:not(.dark) .bg-\[\#fcf9f8\],
+html:not(.dark) .bg-\[\#f6f3f2\],
+html:not(.dark) .bg-\[\#fbf8f0\],
+html:not(.dark) .bg-\[\#faf6ee\],
+html:not(.dark) header.bg-white,
+html:not(.dark) input.bg-white,
+html:not(.dark) select.bg-white,
+html:not(.dark) textarea.bg-white {
+  background-color: #ECE0C6 !important;
+}
+
+/* Slightly deeper warm tint for nested callouts/hover in light mode */
+html:not(.dark) .hover\:bg-\[\#f6f3f2\]:hover,
+html:not(.dark) .hover\:bg-neutral-100:hover {
+  background-color: #dfd2b5 !important;
 }
 
 .font-display {
@@ -92,12 +120,16 @@ html.dark {
 }
 
 /* Base section backgrounds */
+html.dark .bg-\[\#ECE0C6\],
+html.dark .bg-\[\#ece0c6\],
 html.dark .bg-\[\#fcf9f8\],
 html.dark .bg-\[\#f8f6f2\] {
   background-color: #121316 !important;
 }
 
-html.dark .bg-\[\#f6f3f2\] {
+html.dark .bg-\[\#f6f3f2\],
+html.dark .bg-\[\#dfd3b6\],
+html.dark .bg-\[\#dfd2b5\] {
   background-color: #18191d !important;
 }
 

@@ -40,7 +40,7 @@ export const FINDINGS_DATA: FindingItem[] = [
     description:
       'In addition, 16% of youth inmates cannot read or write alphabets in any language upon initial detention.',
     footer: 'ASSESSMENT: FUNCTIONAL ILLITERACY',
-    bgClass: 'bg-white',
+    bgClass: 'bg-[#ECE0C6]',
     iconName: 'BookOpen',
     details: {
       sampleSize: 600,
@@ -287,7 +287,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     description:
       'Lowered the rate of recidivism by 3% in past 18 months, registering direct impact across the high-density repeaters ward.',
     shadowColor: '#deb04a',
-    bgClass: 'bg-white',
+    bgClass: 'bg-[#ECE0C6]',
   },
   {
     id: 'engaged',
@@ -313,7 +313,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     description:
       '150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and appeared for IGNOU degree examinations.',
     shadowColor: '#c05a3e',
-    bgClass: 'bg-white',
+    bgClass: 'bg-[#ECE0C6]',
   },
   {
     id: 'employed',
@@ -326,7 +326,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     description:
       'Inmates formally employed part-time within the prison premises following graduation from our functional skill bootcamps.',
     shadowColor: '#deb04a',
-    bgClass: 'bg-white',
+    bgClass: 'bg-[#ECE0C6]',
   },
   {
     id: 'peer-leaders',
@@ -413,7 +413,7 @@ export const RAND_STUDY_METRICS = [
     stat: '+13%',
     title: 'Correctional education improves 13% chances of inmates not returning to prison.',
     index: 'INDEX: NON-RECIDIVISM PROBABILITY',
-    bg: 'bg-white',
+    bg: 'bg-[#ECE0C6]',
     statColor: 'text-[#913b28]',
     shadow: 'shadow-[5px_5px_0px_#deb04a]',
   },
@@ -431,7 +431,7 @@ export const RAND_STUDY_METRICS = [
     title:
       'Inmates who participate in correctional education programs had a 43 percent lower odds of committing crime.',
     index: 'CRIME REDUCTION PROBABILITY RATIO',
-    bg: 'bg-white',
+    bg: 'bg-[#ECE0C6]',
     statColor: 'text-[#3f5670]',
     shadow: 'shadow-[5px_5px_0px_#c05a3e]',
   },

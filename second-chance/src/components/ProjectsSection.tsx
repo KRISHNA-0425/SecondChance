@@ -55,7 +55,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
   return (
     <section
-      className="w-full bg-[#f8f6f2] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
+      className="w-full bg-[#ECE0C6] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
       id={id}
     >
       <div className="max-w-7xl mx-auto space-y-10">
@@ -98,7 +98,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   className={`px-3 py-1 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] shrink-0 cursor-pointer transition-all relative ${
                     filterCategory === tab.id
                       ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111]'
-                      : 'bg-white text-[#111111] hover:bg-[#deb04a]'
+                      : 'bg-[#ECE0C6] text-[#111111] hover:bg-[#deb04a]'
                   }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -122,7 +122,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                  className="bg-white border-[2.5px] border-[#111111] shadow-[6px_6px_0px_#111111] flex flex-col justify-between h-full"
+                  className="bg-[#ECE0C6] border-[2.5px] border-[#111111] shadow-[6px_6px_0px_#111111] flex flex-col justify-between h-full"
                   id={`project-card-${project.id}`}
                   whileHover={{
                     translateX: 2,
@@ -139,7 +139,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                         {project.badge}
                       </span>
                       <motion.div
-                        className="p-1 bg-white border border-[#111111] shadow-[2px_2px_0px_#111111]"
+                        className="p-1 bg-[#dfd2b5] border border-[#111111] shadow-[2px_2px_0px_#111111]"
                         whileHover={{ rotate: 12, scale: 1.1 }}
                       >
                         {renderIcon(project.iconName)}
@@ -175,7 +175,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
         {/* Feature Spotlight */}
         <AnimatedSection direction="up" delay={0.2} duration={0.7}>
-          <div className="mt-8 bg-[#f6f3f2] border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
+          <div className="mt-8 bg-[#dfd2b5] border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-4">
                 <div className="inline-block bg-[#111111] text-[#deb04a] px-2.5 py-1 font-mono text-xs uppercase font-extrabold">
@@ -192,7 +192,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <StaggerContainer className="grid grid-cols-2 gap-3 pt-2" staggerDelay={0.15}>
                   <StaggerItem>
                     <motion.div
-                      className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
+                      className="p-3 bg-[#ECE0C6] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                       whileHover={{ translateY: -2, boxShadow: '4px 4px 0px #111111' }}
                     >
                       <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#913b28]">
@@ -205,7 +205,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </StaggerItem>
                   <StaggerItem>
                     <motion.div
-                      className="p-3 bg-white border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
+                      className="p-3 bg-[#ECE0C6] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                       whileHover={{ translateY: -2, boxShadow: '4px 4px 0px #111111' }}
                     >
                       <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#3f5670]">
@@ -220,7 +220,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               </div>
 
               <AnimatedSection className="lg:col-span-6" direction="right" delay={0.3} duration={0.7}>
-                <div className="relative bg-white border-[2.5px] border-[#111111] shadow-[5px_5px_0px_#111111] overflow-hidden">
+                <div className="relative bg-[#ECE0C6] border-[2.5px] border-[#111111] shadow-[5px_5px_0px_#111111] overflow-hidden">
                   <div className="absolute top-2 left-2 bg-[#111111] text-white px-2 py-0.5 font-mono text-[11px] uppercase font-extrabold z-10">
                     TIHAR JAIL NO. 5 ARCHIVE
                   </div>

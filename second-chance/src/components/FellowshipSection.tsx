@@ -77,7 +77,7 @@ export const FellowshipSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#fcf9f8] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="fellowship">
+    <section className="w-full bg-[#ECE0C6] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]" id="fellowship">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
         <AnimatedSection direction="up" duration={0.6}>
@@ -102,7 +102,7 @@ export const FellowshipSection: React.FC = () => {
 
         {/* Overview Banner */}
         <AnimatedSection direction="up" delay={0.15} duration={0.7}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#ECE0C6] border-[3px] border-[#111111] p-6 lg:p-8 shadow-[8px_8px_0px_#111111]">
           <div className="lg:col-span-8 space-y-4">
             <h3 className="font-['Space_Grotesk'] text-2xl sm:text-3xl uppercase text-[#111111] font-bold">
               TRANSFORM CORRECTIONAL SPACES FROM WITHIN
@@ -113,7 +113,7 @@ export const FellowshipSection: React.FC = () => {
               Fellows bridge the chasm between penal isolation and social reintegration.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div className="p-3 bg-[#f6f3f2] border-[2px] border-[#111111]">
+              <div className="p-3 bg-[#dfd2b5] border-[2px] border-[#111111]">
                 <div className="font-mono text-xs text-[#4b4731] uppercase font-bold">Stipend</div>
                 <div className="font-['Space_Grotesk'] text-xl font-bold text-[#111111] mt-0.5">
                   ₹35,000/mo
@@ -177,7 +177,7 @@ export const FellowshipSection: React.FC = () => {
             {roadmapPhases.map((phase, idx) => (
               <StaggerItem key={idx}>
                 <motion.div
-                  className="bg-white border-[2.5px] border-[#111111] p-5 shadow-[4px_4px_0px_#111111] flex flex-col justify-between space-y-3 h-full"
+                  className="bg-[#ECE0C6] border-[2.5px] border-[#111111] p-5 shadow-[4px_4px_0px_#111111] flex flex-col justify-between space-y-3 h-full"
                   whileHover={{
                     translateY: -4,
                     boxShadow: '6px 6px 0px #111111',
@@ -210,7 +210,7 @@ export const FellowshipSection: React.FC = () => {
 
         {/* Interactive Application Portal */}
         <AnimatedSection direction="up" delay={0.2} duration={0.7}>
-        <div className="bg-[#f6f3f2] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] max-w-4xl mx-auto">
+        <div className="bg-[#dfd2b5] border-[3px] border-[#111111] p-6 sm:p-10 shadow-[8px_8px_0px_#111111] max-w-4xl mx-auto">
           <div className="border-b-[2.5px] border-[#111111] pb-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <span className="bg-[#111111] text-[#deb04a] px-2.5 py-0.5 font-mono text-xs font-bold uppercase inline-block mb-1">
@@ -221,7 +221,7 @@ export const FellowshipSection: React.FC = () => {
               </h3>
             </div>
             {!submitted && (
-              <div className="font-mono text-xs font-bold text-[#111111] bg-white border border-[#111111] px-3 py-1">
+              <div className="font-mono text-xs font-bold text-[#111111] bg-[#ECE0C6] border border-[#111111] px-3 py-1">
                 STEP {currentStep} OF 2
               </div>
             )}
@@ -242,7 +242,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. Ananya Sharma"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
+                        className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#f3ecdb] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -255,7 +255,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="ananya@example.com"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
+                        className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#f3ecdb] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export const FellowshipSection: React.FC = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
+                        className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#f3ecdb] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -281,7 +281,7 @@ export const FellowshipSection: React.FC = () => {
                       <select
                         value={formData.education}
                         onChange={(e) => setFormData({ ...formData, education: e.target.value })}
-                        className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none cursor-pointer"
+                        className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:outline-none cursor-pointer"
                       >
                         <option>Bachelors Degree (B.A., B.Sc., B.Tech, etc.)</option>
                         <option>Law Degree (LL.B. / B.A. LL.B.)</option>
@@ -323,7 +323,7 @@ export const FellowshipSection: React.FC = () => {
                         setFormData({ ...formData, statementOfPurpose: e.target.value })
                       }
                       placeholder="Discuss your values, personal orientation, and what drew you to correctional reform..."
-                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
+                      className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#f3ecdb] focus:outline-none"
                     ></textarea>
                   </div>
 
@@ -338,7 +338,7 @@ export const FellowshipSection: React.FC = () => {
                         setFormData({ ...formData, priorVolunteerExperience: e.target.value })
                       }
                       placeholder="Details of any previous work with youth, marginalized populations, teaching, or civil rights..."
-                      className="w-full p-3 bg-white border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#faf6ee] focus:outline-none"
+                      className="w-full p-3 bg-[#ECE0C6] border-[2px] border-[#111111] font-['Inter'] text-sm focus:bg-[#f3ecdb] focus:outline-none"
                     ></textarea>
                   </div>
 
@@ -346,7 +346,7 @@ export const FellowshipSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setCurrentStep(1)}
-                      className="bg-white text-[#111111] px-5 py-2.5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
+                      className="bg-[#ECE0C6] text-[#111111] px-5 py-2.5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
                     >
                       ← Back to Coordinates
                     </button>
@@ -363,7 +363,7 @@ export const FellowshipSection: React.FC = () => {
               )}
             </form>
           ) : (
-            <div className="bg-white border-[3px] border-[#111111] p-6 sm:p-8 space-y-4 text-center">
+            <div className="bg-[#ECE0C6] border-[3px] border-[#111111] p-6 sm:p-8 space-y-4 text-center">
               <div className="w-16 h-16 bg-[#deb04a] border-[2.5px] border-[#111111] rounded-full mx-auto flex items-center justify-center shadow-[3px_3px_0px_#111111]">
                 <Sparkles className="w-8 h-8 text-[#111111]" />
               </div>
@@ -384,7 +384,7 @@ export const FellowshipSection: React.FC = () => {
                     setSubmitted(false);
                     setCurrentStep(1);
                   }}
-                  className="bg-white text-[#111111] px-5 py-2.5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
+                  className="bg-[#dfd2b5] text-[#111111] px-5 py-2.5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
                 >
                   Submit Another Application
                 </button>

@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
       </div>
 
       {/* 1. HERO MAIN SECTION */}
-      <section ref={sectionRef} className="w-full px-4 sm:px-6 lg:px-12 py-10 lg:py-16 bg-[#f8f6f2] border-b-[2.5px] border-[#111111]">
+      <section ref={sectionRef} className="w-full px-4 sm:px-6 lg:px-12 py-10 lg:py-16 bg-[#ECE0C6] border-b-[2.5px] border-[#111111]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Manifesto & Details */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
 
             {/* Authority Callout Box */}
             <AnimatedSection delay={0.8} direction="up" duration={0.7}>
-              <div className="p-5 bg-[#f6f3f2] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] relative mt-2">
+              <div className="p-5 bg-[#dfd2b5] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] relative mt-2">
                 <div className="absolute -top-3.5 left-4 bg-[#111111] text-white px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider">
                   OPERATIONAL AUTHORIZATION
                 </div>
@@ -131,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 </motion.button>
                 <motion.button
                   onClick={() => onNavigate('key-findings')}
-                  className="bg-white text-[#111111] border-[2.5px] border-[#111111] px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-extrabold shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-1 active:translate-y-1 active:shadow-none transition-all inline-flex items-center gap-2 cursor-pointer"
+                  className="bg-[#ECE0C6] text-[#111111] border-[2.5px] border-[#111111] px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-extrabold shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-1 active:translate-y-1 active:shadow-none transition-all inline-flex items-center gap-2 cursor-pointer"
                   id="hero-read-findings-btn"
                   whileHover={{
                     translateX: 2,
@@ -170,7 +170,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
 
                 {/* Hero Image Frame */}
                 <motion.div
-                  className="w-full bg-white border-[3px] border-[#111111] shadow-[8px_8px_0px_#111111] overflow-hidden"
+                  className="w-full bg-[#ECE0C6] border-[3px] border-[#111111] shadow-[8px_8px_0px_#111111] overflow-hidden"
                   whileHover={{
                     shadow: '12px 12px 0px #111111',
                     transition: { type: 'spring', stiffness: 300 },
@@ -194,7 +194,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                     loading="eager"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="p-3 bg-[#f0edec] border-t-[2.5px] border-[#111111] flex items-center justify-between font-mono text-xs">
+                  <div className="p-3 bg-[#dfd2b5] border-t-[2.5px] border-[#111111] flex items-center justify-between font-mono text-xs">
                     <span className="font-extrabold text-[#111111]">INMATE YOUTH ENGAGEMENT</span>
                     <span className="text-[#4b4731] font-mono font-bold">DELHI PRISONS DEPT.</span>
                   </div>

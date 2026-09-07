@@ -69,7 +69,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       counterSuffix: '%',
       title: 'Drop in Repeat Offenses',
       description: 'Lowered the rate of recidivism by 3% in past 18 months, registering direct impact across the high-density repeaters ward.',
-      bg: 'bg-white text-[#111111]',
+      bg: 'bg-[#ECE0C6] text-[#111111]',
       shadow: 'shadow-[6px_6px_0px_#deb04a]',
     },
     {
@@ -97,7 +97,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       counterSuffix: '+',
       title: 'Board & Degree Aspirants',
       description: '150+ students motivated to clear NIOS board exams; 100+ youth inmates enrolled and appeared for IGNOU degree examinations.',
-      bg: 'bg-white text-[#111111]',
+      bg: 'bg-[#ECE0C6] text-[#111111]',
       shadow: 'shadow-[6px_6px_0px_#c05a3e]',
     },
     {
@@ -111,7 +111,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
       counterSuffix: '+',
       title: 'Employed Inside Prison',
       description: 'Inmates formally employed part-time within the prison premises following graduation from our functional skill bootcamps.',
-      bg: 'bg-white text-[#111111]',
+      bg: 'bg-[#ECE0C6] text-[#111111]',
       shadow: 'shadow-[6px_6px_0px_#deb04a]',
     },
     {
@@ -247,7 +247,7 @@ export const ImpactSection: React.FC<ImpactSectionProps> = ({ onNavigate, id = '
                 {milestones.map((m, idx) => (
                   <StaggerItem key={idx} direction="left">
                     <motion.div
-                      className="p-5 bg-white text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#deb04a] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                      className="p-5 bg-[#ECE0C6] text-[#111111] border-[2.5px] border-white shadow-[4px_4px_0px_#deb04a] flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                       whileHover={{
                         translateX: 4,
                         boxShadow: '6px 6px 0px #deb04a',

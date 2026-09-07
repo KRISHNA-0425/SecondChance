@@ -41,7 +41,7 @@ export const FindingsSection: React.FC<FindingsSectionProps> = ({ id = 'findings
 
   return (
     <section
-      className="w-full bg-[#f6f3f2] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
+      className="w-full bg-[#ECE0C6] py-16 px-4 sm:px-6 lg:px-12 border-b-[2.5px] border-[#111111]"
       id={id}
     >
       <div className="max-w-7xl mx-auto space-y-8">
@@ -90,7 +90,7 @@ export const FindingsSection: React.FC<FindingsSectionProps> = ({ id = 'findings
                         {finding.tag}
                       </span>
                       <motion.div
-                        className="p-1 border border-[#111111] bg-white text-[#111111] shadow-[2px_2px_0px_#111111]"
+                        className="p-1 border border-[#111111] bg-[#ECE0C6] text-[#111111] shadow-[2px_2px_0px_#111111]"
                         whileHover={{ rotate: 12, scale: 1.1 }}
                         transition={{ type: 'spring', stiffness: 300 }}
                       >
@@ -165,7 +165,7 @@ export const FindingsSection: React.FC<FindingsSectionProps> = ({ id = 'findings
             onClick={() => setSelectedFinding(null)}
           >
             <motion.div
-              className="bg-white border-[3px] border-[#111111] max-w-2xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#deb04a] relative max-h-[90vh] overflow-y-auto"
+              className="bg-[#ECE0C6] border-[3px] border-[#111111] max-w-2xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#deb04a] relative max-h-[90vh] overflow-y-auto"
               initial={{ scale: 0.9, opacity: 0, y: 30 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 30 }}
@@ -203,7 +203,7 @@ export const FindingsSection: React.FC<FindingsSectionProps> = ({ id = 'findings
                 {selectedFinding.details && (
                   <div className="space-y-3 pt-3 border-t-[2.5px] border-[#111111]">
                     <motion.div
-                      className="p-3 bg-[#f6f3f2] border-[2px] border-[#111111]"
+                      className="p-3 bg-[#dfd2b5] border-[2px] border-[#111111]"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}

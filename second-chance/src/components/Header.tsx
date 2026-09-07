@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
   };
 
   return (
-    <header className="h-20 bg-white border-b-[2.5px] border-[#111111] sticky top-0 z-40">
+    <header className="h-20 bg-[#ECE0C6] border-b-[2.5px] border-[#111111] sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <div className="flex items-center min-w-0">
@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
               alt="Project Second Chance logo" 
               className="h-10 w-10 sm:h-12 sm:w-12 lg:size-19 object-contain shrink-0"
             />
-            <div className="bg-white border-[2px] sm:border-[2.5px] border-[#111111] px-2 py-1 sm:px-3 sm:py-1.5 shadow-[2px_2px_0px_#111111] sm:shadow-[3px_3px_0px_#111111] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-[1px_1px_0px_#111111] transition-all">
+            <div className="bg-[#ECE0C6] border-[2px] sm:border-[2.5px] border-[#111111] px-2 py-1 sm:px-3 sm:py-1.5 shadow-[2px_2px_0px_#111111] sm:shadow-[3px_3px_0px_#111111] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-[1px_1px_0px_#111111] transition-all">
               <span className="font-['Space_Grotesk'] text-sm sm:text-base md:text-xl uppercase text-[#111111] tracking-tight font-extrabold block leading-none truncate">
                 PROJECT SECOND CHANCE
               </span>
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
 
         {/* Desktop Navigation */}
         <nav
-          className="hidden lg:flex items-center gap-1 border-[2px] border-[#111111] bg-[#f6f3f2] p-1 shadow-[3px_3px_0px_#111111]"
+          className="hidden lg:flex items-center gap-1 border-[2px] border-[#111111] bg-[#dfd2b5] p-1 shadow-[3px_3px_0px_#111111]"
           id="main-nav-bar"
         >
           {navItems.map((item) => {
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
           {/* Mobile Menu Toggle Button */}
           <motion.button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 border-[2px] border-[#111111] bg-[#f6f3f2] shadow-[2px_2px_0px_#111111] cursor-pointer"
+            className="lg:hidden p-1.5 border-[2px] border-[#111111] bg-[#ECE0C6] shadow-[2px_2px_0px_#111111] cursor-pointer"
             aria-label="Toggle menu"
             id="mobile-menu-toggle-btn"
             whileTap={{ scale: 0.9, rotate: 10 }}
@@ -127,7 +127,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="lg:hidden bg-[#fcf9f8] dark:bg-[#141414] border-b-[3px] border-[#111111] dark:border-white/40 p-4 shadow-[4px_4px_0px_#111111] dark:shadow-[4px_4px_0px_#deb04a] space-y-3.5"
+            className="lg:hidden bg-[#ECE0C6] dark:bg-[#141414] border-b-[3px] border-[#111111] dark:border-white/40 p-4 shadow-[4px_4px_0px_#111111] dark:shadow-[4px_4px_0px_#deb04a] space-y-3.5"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ activeScreen, onNavigate }) => {
                     className={`p-2.5 font-mono text-xs uppercase tracking-wider font-bold border-[2px] border-[#111111] dark:border-white/40 text-left ${
                       isActive
                         ? 'bg-[#111111] text-white shadow-[2px_2px_0px_#111111] dark:bg-[#deb04a] dark:text-[#111111]'
-                        : 'bg-white dark:bg-[#1a1a1a] text-[#111111] dark:text-[#f3f3f3] hover:bg-[#deb04a] dark:hover:bg-[#deb04a] dark:hover:text-[#111111]'
+                        : 'bg-[#dfd2b5] dark:bg-[#1a1a1a] text-[#111111] dark:text-[#f3f3f3] hover:bg-[#deb04a] dark:hover:bg-[#deb04a] dark:hover:text-[#111111]'
                     }`}
                     variants={{
                       hidden: { opacity: 0, y: -10, scale: 0.95 },

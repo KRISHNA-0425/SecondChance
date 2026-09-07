@@ -48,7 +48,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-[#111111]/75 backdrop-blur-xs flex items-center justify-center p-4">
-      <div className="bg-white border-[3px] border-[#111111] max-w-3xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#deb04a] relative max-h-[92vh] overflow-y-auto">
+      <div className="bg-[#ECE0C6] border-[3px] border-[#111111] max-w-3xl w-full p-6 sm:p-8 shadow-[8px_8px_0px_#deb04a] relative max-h-[92vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-1.5 bg-[#111111] text-white hover:bg-[#c05a3e] transition-colors border-[2px] border-[#111111] cursor-pointer"
@@ -91,7 +91,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                 {project.stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="p-3 bg-[#f6f3f2] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
+                    className="p-3 bg-[#dfd2b5] border-[2px] border-[#111111] shadow-[2px_2px_0px_#111111]"
                   >
                     <div className="font-['Space_Grotesk'] text-2xl font-bold text-[#913b28]">
                       {stat.value}
@@ -115,7 +115,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
                 {project.curriculum.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-2.5 bg-white border-[2px] border-[#111111] flex items-center gap-2.5"
+                    className="p-2.5 bg-[#dfd2b5] border-[2px] border-[#111111] flex items-center gap-2.5"
                   >
                     <CheckCircle2 className="w-4 h-4 text-[#3f5670] shrink-0" />
                     <span className="font-['Inter'] text-sm text-[#1c1b1b] font-medium">{item}</span>
@@ -164,7 +164,7 @@ export const ProjectDossierModal: React.FC<ProjectDossierModalProps> = ({
 
             <button
               onClick={onClose}
-              className="bg-white text-[#111111] py-3 px-5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
+              className="bg-[#ECE0C6] text-[#111111] py-3 px-5 font-mono text-xs uppercase font-bold border-[2px] border-[#111111] hover:bg-[#111111] hover:text-white transition-colors cursor-pointer"
             >
               Back
             </button>

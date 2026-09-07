@@ -33,7 +33,7 @@ export const GlobalEvidenceSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <motion.button
                 onClick={() => setShowCalculator(!showCalculator)}
-                className="bg-white text-[#111111] border-[2px] border-white px-3 py-1.5 font-mono text-xs uppercase font-bold flex items-center gap-1.5 hover:bg-[#deb04a] transition-colors cursor-pointer"
+                className="bg-[#ECE0C6] text-[#111111] border-[2px] border-[#ECE0C6] px-3 py-1.5 font-mono text-xs uppercase font-bold flex items-center gap-1.5 hover:bg-[#deb04a] transition-colors cursor-pointer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -52,7 +52,7 @@ export const GlobalEvidenceSection: React.FC = () => {
           {/* Evidence Card 1 */}
           <StaggerItem>
             <motion.div
-              className="bg-white text-[#111111] border-[2.5px] border-white p-6 shadow-[5px_5px_0px_#deb04a] flex flex-col justify-between space-y-4 h-full"
+              className="bg-[#ECE0C6] text-[#111111] border-[2.5px] border-[#ECE0C6] p-6 shadow-[5px_5px_0px_#deb04a] flex flex-col justify-between space-y-4 h-full"
               whileHover={{
                 translateY: -4,
                 boxShadow: '8px 8px 0px #deb04a',
@@ -96,7 +96,7 @@ export const GlobalEvidenceSection: React.FC = () => {
           {/* Evidence Card 3 */}
           <StaggerItem>
             <motion.div
-              className="bg-white text-[#111111] border-[2.5px] border-white p-6 shadow-[5px_5px_0px_#c05a3e] flex flex-col justify-between space-y-4 h-full"
+              className="bg-[#ECE0C6] text-[#111111] border-[2.5px] border-[#ECE0C6] p-6 shadow-[5px_5px_0px_#c05a3e] flex flex-col justify-between space-y-4 h-full"
               whileHover={{
                 translateY: -4,
                 boxShadow: '8px 8px 0px #c05a3e',
@@ -126,7 +126,7 @@ export const GlobalEvidenceSection: React.FC = () => {
               transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="overflow-hidden"
             >
-              <div className="mt-6 bg-[#f8f6f2] text-[#111111] border-[3px] border-[#deb04a] p-6 shadow-[6px_6px_0px_#deb04a]">
+              <div className="mt-6 bg-[#ECE0C6] text-[#111111] border-[3px] border-[#deb04a] p-6 shadow-[6px_6px_0px_#deb04a]">
                 <div className="flex items-center justify-between border-b-[2px] border-[#111111] pb-3 mb-4">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-[#c05a3e]" />
@@ -158,7 +158,7 @@ export const GlobalEvidenceSection: React.FC = () => {
                       step="20"
                       value={studentCohort}
                       onChange={(e) => setStudentCohort(Number(e.target.value))}
-                      className="w-full h-3 bg-[#e5e2e1] border-[2px] border-[#111111] rounded-none accent-[#c05a3e] cursor-pointer"
+                      className="w-full h-3 bg-[#dfd2b5] border-[2px] border-[#111111] rounded-none accent-[#c05a3e] cursor-pointer"
                     />
                     <div className="flex justify-between font-mono text-[11px] text-[#4b4731]">
                       <span>Min: 20 Inmates</span>
@@ -169,7 +169,7 @@ export const GlobalEvidenceSection: React.FC = () => {
                   <StaggerContainer className="lg:col-span-6 grid grid-cols-3 gap-3" staggerDelay={0.1}>
                     <StaggerItem>
                       <motion.div
-                        className="bg-white border-[2px] border-[#111111] p-3 text-center shadow-[3px_3px_0px_#111111]"
+                        className="bg-[#dfd2b5] border-[2px] border-[#111111] p-3 text-center shadow-[3px_3px_0px_#111111]"
                         whileHover={{ translateY: -2, boxShadow: '5px 5px 0px #111111' }}
                       >
                         <div className="font-mono text-[11px] uppercase text-[#4b4731] font-bold">

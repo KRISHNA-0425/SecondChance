@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayIntro }) => 
               )}
               <motion.button
                 onClick={scrollToTop}
-                className="bg-white text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-white flex items-center gap-1 hover:bg-[#deb04a] transition-colors cursor-pointer"
+                className="bg-[#ECE0C6] text-[#111111] px-3 py-1 font-mono text-xs uppercase font-bold border border-[#ECE0C6] flex items-center gap-1 hover:bg-[#deb04a] transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05, translateY: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
